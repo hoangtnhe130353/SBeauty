@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC1 Group — Báo cáo & Kế hoạch Phát triển</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header id="header">
+    <nav class="navbar container">
+      <a href="#" class="logo">
+        <div class="logo-icon">PC1</div>
+        <div class="logo-text">
+          <span class="logo-main">PC1 GROUP</span>
+          <span class="logo-sub">Tập đoàn PC1</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#kpi">Chỉ số</a></li>
+        <li><a href="#sectors">Mảng KD</a></li>
+        <li><a href="#highlights">Dấu ấn 2024</a></li>
+        <li><a href="#plan">Kế hoạch</a></li>
+        <li><a href="#documents">Tài liệu</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-sm" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-download"></i> Báo cáo
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <!-- Animated particles -->
+      <div class="particles" id="particles"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+        <i class="fas fa-bolt"></i> Báo cáo Thường niên 2024
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Kiến tạo hạ tầng<br />
+        <span class="gradient-text">Năng lượng bền vững</span>
+      </h1>
+
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="350">
+        Tổng hợp thông tin nổi bật về doanh nghiệp, kết quả hoạt động và kế hoạch phát triển của
+        <strong>Công ty Cổ phần Tập đoàn PC1</strong> — hơn 60 năm xây dựng tương lai.
+      </p>
+
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="450">
+        <button class="btn btn-primary" onclick="document.getElementById('plan').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-chart-line"></i> Xem Kế hoạch 2024
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-file-pdf"></i> Tải Báo cáo
+        </button>
+      </div>
+
+      <!-- Hero KPI mini strip -->
+      <div class="hero-kpi" data-aos="fade-up" data-aos-delay="550">
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="10089" data-suffix=" tỷ">0</span>
+          <span class="hero-kpi-label">Doanh thu 2024</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="710" data-suffix=" tỷ">0</span>
+          <span class="hero-kpi-label">Lợi nhuận sau thuế</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="313" data-suffix=" MW">0</span>
+          <span class="hero-kpi-label">Công suất phát điện</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="60" data-suffix="+">0</span>
+          <span class="hero-kpi-label">Năm hoạt động</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Cuộn xuống</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Về chúng tôi</div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+          <h2 class="section-title">PC1 Group —<br/>Từ xây lắp điện<br/>đến hệ sinh thái<br/><span class="gradient-text">năng lượng xanh</span></h2>
+          <p>PC1 được thành lập ngày 02/03/1963, khởi nguồn từ nhiệm vụ xây lắp các công trình truyền tải điện quốc gia. Qua hơn 60 năm, công ty phát triển thành tập đoàn đa ngành hoạt động trong các lĩnh vực năng lượng, công nghiệp và bất động sản.</p>
+          <p>Định vị chiến lược: <em>"Xây dựng hệ sinh thái kinh tế xanh, số hóa và bền vững."</em></p>
+
+          <div class="about-cards">
+            <div class="about-card" data-aos="zoom-in" data-aos-delay="200">
+              <i class="fas fa-eye"></i>
+              <h4>Tầm nhìn</h4>
+              <p>Trở thành tập đoàn quốc tế, uy tín và chuyên nghiệp trong lĩnh vực năng lượng, công nghiệp xanh và thông minh.</p>
+            </div>
+            <div class="about-card" data-aos="zoom-in" data-aos-delay="300">
+              <i class="fas fa-bullseye"></i>
+              <h4>Sứ mệnh</h4>
+              <p>Kiến tạo các công trình hạ tầng năng lượng bền vững, tạo ra giá trị lâu dài cho cổ đông, đối tác và cộng đồng.</p>
+            </div>
+            <div class="about-card" data-aos="zoom-in" data-aos-delay="400">
+              <i class="fas fa-leaf"></i>
+              <h4>Giá trị cốt lõi</h4>
+              <p>Chất lượng – Uy tín – Đổi mới – Bền vững – Hợp tác. Năng lượng sạch vì tương lai xanh.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual" data-aos="fade-left" data-aos-delay="200">
+          <div class="about-stats-box">
+            <div class="stat-row">
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="300">
+                <div class="stat-icon"><i class="fas fa-industry"></i></div>
+                <div class="stat-info">
+                  <strong class="count-num" data-count="6">0</strong>
+                  <span>Mảng kinh doanh</span>
+                </div>
+              </div>
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="400">
+                <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                <div class="stat-info">
+                  <strong class="count-num" data-count="10">0</strong>
+                  <span>Nhà máy vận hành</span>
+                </div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="500">
+                <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                <div class="stat-info">
+                  <strong>3+</strong>
+                  <span>Thị trường quốc tế</span>
+                </div>
+              </div>
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="600">
+                <div class="stat-icon"><i class="fas fa-award"></i></div>
+                <div class="stat-info">
+                  <strong>HOSE</strong>
+                  <span>Niêm yết chứng khoán</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline milestones -->
+            <div class="mini-timeline" data-aos="fade-up" data-aos-delay="300">
+              <h4><i class="fas fa-history"></i> Mốc phát triển</h4>
+              <div class="timeline-list">
+                <div class="t-item"><span class="t-year">1963</span><span class="t-text">Thành lập Công ty Xây lắp điện</span></div>
+                <div class="t-item"><span class="t-year">2005</span><span class="t-text">Cổ phần hóa, chuyển đổi mô hình</span></div>
+                <div class="t-item"><span class="t-year">2010</span><span class="t-text">Niêm yết trên HOSE (mã: PC1)</span></div>
+                <div class="t-item"><span class="t-year">2017</span><span class="t-text">Đổi tên thành PC1 Group</span></div>
+                <div class="t-item active"><span class="t-year">2024</span><span class="t-text">Doanh thu vượt 10.000 tỷ đồng</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KPI SECTION ===== -->
+  <section id="kpi" class="section section-dark">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">Chỉ số nổi bật</div>
+      <h2 class="section-title light" data-aos="fade-up">Kết quả kinh doanh <span class="gradient-text">2024</span></h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        Năm 2024 đánh dấu bước tăng trưởng vượt bậc — doanh thu lần đầu vượt ngưỡng <strong>10.000 tỷ đồng</strong>, lợi nhuận vượt kế hoạch <strong>135%</strong>.
+      </p>
+
+      <div class="kpi-grid" data-aos="fade-up" data-aos-delay="150">
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="kpi-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="kpi-num count-num" data-count="10089" data-suffix="">10,089</div>
+          <div class="kpi-unit">tỷ đồng</div>
+          <div class="kpi-label">Tổng doanh thu 2024</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> +30% so với 2023</div>
+        </div>
+        <div class="kpi-card highlight" data-aos="zoom-in" data-aos-delay="150">
+          <div class="kpi-icon"><i class="fas fa-coins"></i></div>
+          <div class="kpi-num count-num" data-count="710" data-suffix="">710</div>
+          <div class="kpi-unit">tỷ đồng</div>
+          <div class="kpi-label">Lợi nhuận sau thuế</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> Vượt 135% kế hoạch</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="kpi-icon"><i class="fas fa-bolt"></i></div>
+          <div class="kpi-num">313</div>
+          <div class="kpi-unit">MW</div>
+          <div class="kpi-label">Tổng công suất phát điện</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> 10 nhà máy hoạt động</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="250">
+          <div class="kpi-icon"><i class="fas fa-percentage"></i></div>
+          <div class="kpi-num">15%</div>
+          <div class="kpi-unit"></div>
+          <div class="kpi-label">Cổ tức năm 2024</div>
+          <div class="kpi-change neutral"><i class="fas fa-equals"></i> Duy trì ổn định</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="kpi-icon"><i class="fas fa-globe-asia"></i></div>
+          <div class="kpi-num">3</div>
+          <div class="kpi-unit">quốc gia</div>
+          <div class="kpi-label">Thị trường quốc tế mới</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> PHL · Lào · AUS</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="350">
+          <div class="kpi-icon"><i class="fas fa-building"></i></div>
+          <div class="kpi-num">200</div>
+          <div class="kpi-unit">ha</div>
+          <div class="kpi-label">KCN Nomura 2 Hải Phòng</div>
+          <div class="kpi-change up"><i class="fas fa-check-circle"></i> Được Chính phủ phê duyệt</div>
+        </div>
+      </div>
+
+      <!-- Chart section -->
+      <div class="chart-section" data-aos="fade-up" data-aos-delay="200">
+        <div class="chart-row">
+          <div class="chart-box" data-aos="fade-right" data-aos-delay="100">
+            <h3><i class="fas fa-chart-bar"></i> Doanh thu & Lợi nhuận (2022–2024)</h3>
+            <div style="height: 300px; position:relative;">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-box" data-aos="fade-left" data-aos-delay="100">
+            <h3><i class="fas fa-chart-pie"></i> Cơ cấu doanh thu theo mảng 2024</h3>
+            <div style="height: 300px; position:relative;">
+              <canvas id="segmentChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUSINESS SECTORS ===== -->
+  <section id="sectors" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Mảng kinh doanh</div>
+      <h2 class="section-title" data-aos="fade-up">Hệ sinh thái <span class="gradient-text">đa ngành</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        PC1 hoạt động trên 6 mảng kinh doanh chiến lược, tạo ra chuỗi giá trị tích hợp từ xây lắp, vận hành đến đầu tư phát triển.
+      </p>
+
+      <div class="sectors-grid">
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="sector-num">01</div>
+          <div class="sector-icon"><i class="fas fa-hard-hat"></i></div>
+          <h3>Tổng thầu Xây lắp điện</h3>
+          <p>Dẫn đầu cả nước về xây lắp điện. Năng lực tổng thầu EPC các dự án truyền tải đến <strong>500kV</strong> và nhà máy năng lượng tái tạo.</p>
+          <div class="sector-tag">Lĩnh vực cốt lõi</div>
+          <div class="sector-highlight">
+            <i class="fas fa-star"></i> Hoàn thành đường dây 500kV mạch 3 năm 2024
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="sector-num">02</div>
+          <div class="sector-icon green"><i class="fas fa-water"></i></div>
+          <h3>Đầu tư Năng lượng</h3>
+          <p>Sở hữu và vận hành <strong>10 nhà máy thủy điện & điện gió</strong>, tổng công suất <strong>313 MW</strong>. Đang xây thêm 2 nhà máy mới.</p>
+          <div class="sector-tag green">Tăng trưởng nhanh</div>
+          <div class="sector-highlight">
+            <i class="fas fa-plus-circle"></i> Khởi công Bảo Lạc A & Thượng Hà 2024
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="sector-num">03</div>
+          <div class="sector-icon blue"><i class="fas fa-city"></i></div>
+          <h3>Khu công nghiệp</h3>
+          <p>Phát triển <strong>khu công nghiệp sinh thái, thông minh</strong>. Dự án KCN Nomura – Hải Phòng, Yên Phong II-A thu hút FDI lớn.</p>
+          <div class="sector-tag blue">Chiến lược dài hạn</div>
+          <div class="sector-highlight">
+            <i class="fas fa-check-circle"></i> KCN Nomura 2 ~200ha được phê duyệt
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="sector-num">04</div>
+          <div class="sector-icon orange"><i class="fas fa-cogs"></i></div>
+          <h3>Sản xuất Công nghiệp</h3>
+          <p>Thiết kế, chế tạo <strong>cột thép đơn thân và cột thép liên kết thanh</strong> cho đường dây truyền tải điện đến 750kV trong và ngoài nước.</p>
+          <div class="sector-tag orange">Xuất khẩu</div>
+          <div class="sector-highlight">
+            <i class="fas fa-globe"></i> Xuất khẩu sang Philippines, Lào, Australia
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="sector-num">05</div>
+          <div class="sector-icon purple"><i class="fas fa-mountain"></i></div>
+          <h3>Khai thác Khoáng sản</h3>
+          <p>Vận hành dự án khai thác lộ thiên <strong>Nickel – Đồng</strong> tại Cao Bằng với công suất thiết kế <strong>600.000 tấn quặng/năm</strong>.</p>
+          <div class="sector-tag purple">Tài nguyên chiến lược</div>
+          <div class="sector-highlight">
+            <i class="fas fa-map-marker-alt"></i> Cao Bằng – quy mô lớn nhất vùng
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="sector-num">06</div>
+          <div class="sector-icon teal"><i class="fas fa-home"></i></div>
+          <h3>Bất động sản Dân dụng</h3>
+          <p>Đầu tư và phát triển các <strong>tổ hợp nhà ở, chung cư cao cấp</strong> và văn phòng cho thuê tại các đô thị lớn.</p>
+          <div class="sector-tag teal">Đô thị hóa</div>
+          <div class="sector-highlight">
+            <i class="fas fa-building"></i> Dự án tại Hà Nội và các tỉnh trọng điểm
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HIGHLIGHTS 2024 ===== -->
+  <section id="highlights" class="section section-gradient">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">Dấu ấn 2024</div>
+      <h2 class="section-title light" data-aos="fade-up">Những cột mốc <span class="gradient-text">nổi bật</span></h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        Năm 2024 — giai đoạn tăng trưởng vượt bậc, nhiều dự án hạ tầng trọng điểm, bước tiến quan trọng trên thị trường quốc tế.
+      </p>
+
+      <div class="highlights-grid">
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="100">
+          <div class="hl-icon"><i class="fas fa-plug"></i></div>
+          <div class="hl-badge">Dự án Quốc gia</div>
+          <h3>Đường dây 500kV mạch 3</h3>
+          <p>Hoàn thành xuất sắc thi công <strong>đường dây truyền tải 500kV mạch 3</strong> — dự án trọng điểm quốc gia, giải quyết căng thẳng điện cho miền Nam.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="180">
+          <div class="hl-icon"><i class="fas fa-water"></i></div>
+          <div class="hl-badge">Mở rộng năng lượng</div>
+          <h3>2 Nhà máy thủy điện mới</h3>
+          <p>Khởi công xây dựng thủy điện <strong>Bảo Lạc A</strong> và <strong>Thượng Hà</strong> tại Cao Bằng, nâng tổng số nhà máy lên 12 dự án.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="260">
+          <div class="hl-icon"><i class="fas fa-industry"></i></div>
+          <div class="hl-badge">Chính phủ phê duyệt</div>
+          <h3>KCN Nomura 2 Hải Phòng</h3>
+          <p>Được Chính phủ chấp thuận chủ trương đầu tư <strong>KCN Nomura 2</strong> gần 200 ha, tổng vốn <strong>2.800 tỷ đồng</strong>.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="340">
+          <div class="hl-icon"><i class="fas fa-plane"></i></div>
+          <div class="hl-badge">Vươn tầm quốc tế</div>
+          <h3>Xuất khẩu & Hợp đồng EPC</h3>
+          <p>Ký kết hợp đồng EPC và xuất khẩu sản phẩm tại <strong>Philippines, Lào và Australia</strong> — bước tiến quan trọng trong chiến lược quốc tế hóa.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="420">
+          <div class="hl-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="hl-badge">Tài chính vượt trội</div>
+          <h3>Lợi nhuận vượt 135% kế hoạch</h3>
+          <p>LNST đạt <strong>710 tỷ đồng</strong>, vượt 135% kế hoạch. Doanh thu lần đầu vượt ngưỡng <strong>10.000 tỷ đồng</strong>.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="500">
+          <div class="hl-icon"><i class="fas fa-leaf"></i></div>
+          <div class="hl-badge">Phát triển bền vững</div>
+          <h3>Báo cáo ESG lần đầu tích hợp</h3>
+          <p>Phát hành <strong>Báo cáo Phát triển Bền vững 2024</strong> tích hợp trong Báo cáo thường niên — cam kết ESG mạnh mẽ hơn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLAN & STRATEGY ===== -->
+  <section id="plan" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Kế hoạch & Chiến lược</div>
+      <h2 class="section-title" data-aos="fade-up">Định hướng <span class="gradient-text">2024 – 2026</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Theo Nghị quyết Đại hội đồng cổ đông 2024, PC1 đặt mục tiêu tăng trưởng mạnh mẽ và ổn định trong trung hạn.
+      </p>
+
+      <div class="plan-grid">
+        <!-- Targets -->
+        <div class="plan-targets" data-aos="fade-right" data-aos-delay="100">
+          <h3><i class="fas fa-bullseye"></i> Chỉ tiêu năm 2024</h3>
+          <div class="target-item">
+            <div class="target-label">Tổng doanh thu</div>
+            <div class="target-bar-wrap">
+              <div class="target-bar" data-width="93" style="width:0%"></div>
+            </div>
+            <div class="target-nums">
+              <span class="target-plan">KH: 10.822 tỷ</span>
+              <span class="target-actual achieved">TH: 10.089 tỷ ✓</span>
+            </div>
+          </div>
+          <div class="target-item">
+            <div class="target-label">Lợi nhuận sau thuế</div>
+            <div class="target-bar-wrap">
+              <div class="target-bar exceed" data-width="100" style="width:0%"></div>
+            </div>
+            <div class="target-nums">
+              <span class="target-plan">KH: 525 tỷ</span>
+              <span class="target-actual achieved">TH: 710 tỷ ✓ (+135%)</span>
+            </div>
+          </div>
+          <div class="target-item">
+            <div class="target-label">Cổ tức</div>
+            <div class="target-bar-wrap">
+              <div class="target-bar" data-width="100" style="width:0%"></div>
+            </div>
+            <div class="target-nums">
+              <span class="target-plan">KH: 15%</span>
+              <span class="target-actual achieved">TH: 15% ✓</span>
+            </div>
+          </div>
+
+          <div class="context-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="context-icon"><i class="fas fa-info-circle"></i></div>
+            <div>
+              <strong>Nguồn:</strong> Nghị quyết ĐHĐCĐ thường niên 2024, kết quả hoạt động báo cáo thường niên 2024.
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy pillars -->
+        <div class="plan-strategy" data-aos="fade-left" data-aos-delay="100">
+          <h3><i class="fas fa-chess"></i> Trụ cột chiến lược</h3>
+          <div class="strategy-list">
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="150">
+              <div class="si-icon"><i class="fas fa-trophy"></i></div>
+              <div class="si-content">
+                <h4>Củng cố vị thế Xây lắp điện</h4>
+                <p>Duy trì vị trí số 1 thị phần EPC truyền tải điện tại Việt Nam, tăng cường năng lực kỹ thuật và đội ngũ chuyên gia.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="220">
+              <div class="si-icon"><i class="fas fa-solar-panel"></i></div>
+              <div class="si-content">
+                <h4>Mở rộng danh mục Năng lượng</h4>
+                <p>Phát triển thêm các dự án thủy điện, điện gió, hướng tới tổng công suất 500+ MW trong trung hạn.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="290">
+              <div class="si-icon"><i class="fas fa-map-marked-alt"></i></div>
+              <div class="si-content">
+                <h4>Phát triển Khu công nghiệp</h4>
+                <p>Mở rộng và tối ưu hóa KCN hiện hữu, tiếp tục phát triển KCN Nomura 2, thu hút FDI chất lượng cao.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="360">
+              <div class="si-icon"><i class="fas fa-globe"></i></div>
+              <div class="si-content">
+                <h4>Quốc tế hóa</h4>
+                <p>Tăng hiện diện tại Philippines, Lào, Australia và tiếp tục tìm kiếm thị trường mới trong khu vực ASEAN.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="430">
+              <div class="si-icon"><i class="fas fa-seedling"></i></div>
+              <div class="si-content">
+                <h4>ESG & Tăng trưởng xanh</h4>
+                <p>Tích hợp tiêu chí ESG vào chiến lược kinh doanh, hướng tới net-zero và phát triển bền vững dài hạn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue growth chart -->
+      <div class="growth-chart-box" data-aos="fade-up" data-aos-delay="200">
+        <h3><i class="fas fa-chart-area"></i> Lộ trình tăng trưởng Doanh thu (2022 – 2026F)</h3>
+        <div style="height: 280px; position:relative;">
+          <canvas id="growthChart"></canvas>
+        </div>
+        <p class="chart-note">* 2025F–2026F: dự phóng nội bộ dựa theo kế hoạch và xu hướng tăng trưởng</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENTS ===== -->
+  <section id="documents" class="section section-light">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Tài liệu & Báo cáo</div>
+      <h2 class="section-title" data-aos="fade-up">Thư viện <span class="gradient-text">tài liệu công bố</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Các tài liệu chính thức của Công ty Cổ phần Tập đoàn PC1, được công bố tới cổ đông và nhà đầu tư.
+      </p>
+
+      <!-- Filters -->
+      <div class="doc-filters" data-aos="fade-up" data-aos-delay="150">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="annual">Báo cáo thường niên</button>
+        <button class="filter-btn" data-filter="agm">Nghị quyết ĐHĐCĐ</button>
+        <button class="filter-btn" data-filter="finance">Tài chính</button>
+        <button class="filter-btn" data-filter="news">Thông báo</button>
+      </div>
+
+      <div class="docs-grid" id="docsGrid">
+
+        <div class="doc-card" data-category="annual" data-aos="fade-up" data-aos-delay="100">
+          <div class="doc-type-badge annual">Báo cáo thường niên</div>
+          <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo thường niên 2024</h4>
+            <p>Tổng hợp đầy đủ kết quả hoạt động, chiến lược, quản trị công ty và Báo cáo Phát triển Bền vững năm 2024.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 22/04/2025 · <i class="fas fa-file-alt"></i> PDF · ~15MB</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> Tải
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="agm" data-aos="fade-up" data-aos-delay="150">
+          <div class="doc-type-badge agm">Nghị quyết ĐHĐCĐ</div>
+          <div class="doc-icon"><i class="fas fa-gavel"></i></div>
+          <div class="doc-info">
+            <h4>Nghị quyết ĐHĐCĐ thường niên 2024</h4>
+            <p>Kế hoạch kinh doanh 2024, phân phối lợi nhuận, phê duyệt chiến lược và phương án phát hành cổ phiếu cổ tức.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 08/10/2024 · <i class="fas fa-file-alt"></i> PDF</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> Tải
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="annual" data-aos="fade-up" data-aos-delay="200">
+          <div class="doc-type-badge annual">Báo cáo thường niên</div>
+          <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo thường niên 2023</h4>
+            <p>Kết quả kinh doanh năm 2023, chiến lược và định hướng. Doanh thu đạt 7.775 tỷ đồng, LNST 303 tỷ đồng.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 23/05/2024 · <i class="fas fa-file-alt"></i> PDF</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://static2.vietstock.vn/vietstock/2024/5/23/20240523_pc1_240523_annual_report_2023.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://static2.vietstock.vn/vietstock/2024/5/23/20240523_pc1_240523_annual_report_2023.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> Tải
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="finance" data-aos="fade-up" data-aos-delay="250">
+          <div class="doc-type-badge finance">Báo cáo tài chính</div>
+          <div class="doc-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="doc-info">
+            <h4>BCTC Bán niên 2025 (Tiếng Anh)</h4>
+            <p>Báo cáo tài chính riêng lẻ giữa niên độ Q2/2025 của PC1 Group Joint Stock Company (phiên bản tiếng Anh).</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 05/09/2025 · <i class="fas fa-file-alt"></i> PDF · EN</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> Tải
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="news" data-aos="fade-up" data-aos-delay="300">
+          <div class="doc-type-badge news">Phân tích thị trường</div>
+          <div class="doc-icon"><i class="fas fa-search-dollar"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo cập nhật PC1 (VCBS 11/2024)</h4>
+            <p>Cập nhật luận điểm đầu tư, triển vọng tăng trưởng 9T2024 và dự báo kết quả kinh doanh đến cuối năm 2024.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 11/2024 · <i class="fas fa-file-alt"></i> PDF · VCBS</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://cafef1.mediacdn.vn/Images/Uploaded/DuLieuDownload/PhanTichBaoCao/PC1_251124_VCBS25112024093012.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://cafef1.mediacdn.vn/Images/Uploaded/DuLieuDownload/PhanTichBaoCao/PC1_251124_VCBS25112024093012.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> Tải
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="finance" data-aos="fade-up" data-aos-delay="350">
+          <div class="doc-type-badge finance">Phân tích</div>
+          <div class="doc-icon"><i class="fas fa-microscope"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo khởi đầu – Shinhan Sec</h4>
+            <p>Báo cáo phân tích toàn diện về PC1 Group, các mảng kinh doanh, định giá và khuyến nghị BUY của Shinhan Securities.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 2024 · <i class="fas fa-file-alt"></i> PDF · EN · Shinhan</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://shinhansec.com.vn/uploads/report/PC1_Initiation_EN_v13.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://shinhansec.com.vn/uploads/report/PC1_Initiation_EN_v13.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> Tải
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / IR ===== -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="section-tag light">Liên hệ</div>
+          <h2 class="section-title light">Quan hệ <span class="gradient-text">Nhà đầu tư</span></h2>
+          <p class="light-text">Mọi thông tin liên quan đến cổ phiếu, tài liệu IR và hợp tác đầu tư, vui lòng liên hệ bộ phận Quan hệ Nhà đầu tư của PC1 Group.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-building"></i></div>
+              <div>
+                <strong>Trụ sở chính</strong>
+                <p>Số 583 Nguyễn Trãi, Thanh Liệt, Hà Nội</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Điện thoại</strong>
+                <p>024 7309 5555</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-globe"></i></div>
+              <div>
+                <strong>Website</strong>
+                <p>www.pc1group.vn</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <strong>Mã chứng khoán</strong>
+                <p>PC1 – Sàn HOSE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form" data-aos="fade-left">
+          <div class="form-box">
+            <h3><i class="fas fa-envelope"></i> Gửi yêu cầu thông tin</h3>
+            <div class="form-group">
+              <label>Họ và tên</label>
+              <input type="text" placeholder="Nguyễn Văn A" id="f-name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="email@example.com" id="f-email" />
+            </div>
+            <div class="form-group">
+              <label>Loại thông tin cần</label>
+              <select id="f-type">
+                <option>Báo cáo tài chính</option>
+                <option>Kế hoạch kinh doanh</option>
+                <option>Hợp tác đầu tư</option>
+                <option>Tài liệu doanh nghiệp</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Nội dung</label>
+              <textarea rows="4" placeholder="Nhập nội dung yêu cầu..." id="f-msg"></textarea>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="handleFormSubmit()">
+              <i class="fas fa-paper-plane"></i> Gửi yêu cầu
+            </button>
+            <p class="form-note">* Website demo – form chưa kết nối backend. Vui lòng liên hệ trực tiếp qua email/điện thoại.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">PC1</div>
+            <span>PC1 GROUP</span>
+          </div>
+          <p>Công ty Cổ phần Tập đoàn PC1 — Hơn 60 năm xây dựng hạ tầng năng lượng Việt Nam. Kiến tạo hệ sinh thái kinh tế xanh, số hóa và bền vững.</p>
+          <div class="footer-badges">
+            <span class="badge"><i class="fas fa-chart-bar"></i> HOSE: PC1</span>
+            <span class="badge"><i class="fas fa-leaf"></i> ESG 2024</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Trang</h4>
+          <ul>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#kpi">Chỉ số 2024</a></li>
+            <li><a href="#sectors">Mảng kinh doanh</a></li>
+            <li><a href="#highlights">Dấu ấn 2024</a></li>
+            <li><a href="#plan">Kế hoạch & Chiến lược</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Tài liệu</h4>
+          <ul>
+            <li><a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank">Báo cáo thường niên 2024</a></li>
+            <li><a href="https://static2.vietstock.vn/vietstock/2024/5/23/20240523_pc1_240523_annual_report_2023.pdf" target="_blank">Báo cáo thường niên 2023</a></li>
+            <li><a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" target="_blank">Nghị quyết ĐHĐCĐ 2024</a></li>
+            <li><a href="#documents">Thư viện tài liệu</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-info">
+          <h4>Thông tin</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Số 583 Nguyễn Trãi, Thanh Liệt, Hà Nội</p>
+          <p><i class="fas fa-phone"></i> 024 7309 5555</p>
+          <p><i class="fas fa-globe"></i> www.pc1group.vn</p>
+          <div class="footer-note">
+            <i class="fas fa-info-circle"></i>
+            <span>Dữ liệu tổng hợp từ Báo cáo thường niên 2024 và các tài liệu chính thức của PC1.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Công ty Cổ phần Tập đoàn PC1 · Bản demo website – không phải website chính thức · Dữ liệu mang tính minh họa</p>
+        <p>Nguồn: <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank">Annual Report 2024</a> · <a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" target="_blank">AGM Resolution 2024</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
