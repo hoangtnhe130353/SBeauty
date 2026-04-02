@@ -58,17 +58,30 @@ function resolveSitePath(relativePath) {
 function renderYearSwitchers(years) {
   document.querySelectorAll('[data-year-switcher]').forEach((container) => {
     const currentYear = container.dataset.currentYear;
-    const isIndexStyle = container.classList.contains('year-switcher-index');
-    const buttonClass = isIndexStyle ? 'yr-btn' : 'year-btn';
-    const activeClass = isIndexStyle ? 'yr-active' : 'active';
-
-    container.innerHTML = years.map((item) => {
-      const classes = [buttonClass];
-      if (item.year === currentYear) classes.push(activeClass);
+    const currentItem = years.find((item) => item.year === currentYear) || years[0];
+    const menuItems = years.map((item) => {
+      const classes = ['year-selector-link'];
+      if (item.year === currentYear) classes.push('is-active');
       if (item.placeholder) classes.push('is-placeholder');
 
-      return `<a href="${item.href}" class="${classes.join(' ')}"${item.year === currentYear ? ' aria-current="page"' : ''}>${item.label}</a>`;
+      return `<a href="${item.href}" class="${classes.join(' ')}"${item.year === currentYear ? ' aria-current="page"' : ''}>
+        <span>${item.label}</span>
+        ${item.placeholder ? '<small>Sắp có</small>' : ''}
+      </a>`;
     }).join('');
+
+    container.innerHTML = `
+      <details class="year-selector">
+        <summary class="year-selector-trigger">
+          <span class="year-selector-caption">Năm báo cáo</span>
+          <strong>${currentItem ? currentItem.label : currentYear}</strong>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <div class="year-selector-menu">
+          ${menuItems}
+        </div>
+      </details>
+    `;
   });
 }
 

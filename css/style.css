@@ -1257,6 +1257,14 @@ input, select, textarea { font-family: var(--font); }
     gap: 0;
   }
   .hero-kpi-divider { width: 100%; height: 1px; }
+  .year-selector-trigger {
+    min-width: 144px;
+    padding: 9px 12px;
+  }
+  .year-selector-menu {
+    width: min(220px, calc(100vw - 32px));
+    right: 0;
+  }
   .year-summary-grid { grid-template-columns: 1fr; }
   .year-placeholder-top { flex-direction: column; align-items: flex-start; }
   .sectors-grid { grid-template-columns: 1fr; }
@@ -1289,39 +1297,95 @@ input, select, textarea { font-family: var(--font); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== YEAR SWITCHER (index) ===== */
-.year-switcher-index {
+/* ===== YEAR SELECTOR ===== */
+.year-switcher-index,
+.year-switcher {
   display: flex;
-  gap: 4px;
-  padding: 4px;
-  max-width: min(100%, 420px);
-  overflow-x: auto;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  scrollbar-width: none;
+  align-items: center;
 }
-.year-switcher-index::-webkit-scrollbar { display: none; }
-.yr-btn {
-  flex: 0 0 auto;
-  padding: 5px 14px;
-  border-radius: 999px;
-  font-size: 0.82rem;
+.year-selector {
+  position: relative;
+}
+.year-selector summary {
+  list-style: none;
+}
+.year-selector summary::-webkit-details-marker {
+  display: none;
+}
+.year-selector-trigger {
+  min-width: 164px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.18);
+}
+.year-selector-trigger i {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.68);
+  transition: transform 0.25s ease;
+}
+.year-selector[open] .year-selector-trigger i {
+  transform: rotate(180deg);
+}
+.year-selector-caption {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.52);
+}
+.year-selector-trigger strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.year-selector-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(13,27,42,0.96);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.35);
+  backdrop-filter: blur(14px);
+  z-index: 50;
+}
+.year-selector-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 14px;
+  color: rgba(255,255,255,0.82);
   font-weight: 700;
-  color: rgba(255,255,255,0.58);
   transition: var(--transition);
 }
-.yr-btn:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.1);
+.year-selector-link small {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.46);
 }
-.yr-btn.yr-active {
+.year-selector-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+.year-selector-link.is-active {
   color: #fff;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  box-shadow: 0 2px 12px rgba(10,79,168,0.35);
 }
-.yr-btn.is-placeholder {
-  border: 1px dashed rgba(255,255,255,0.16);
+.year-selector-link.is-active small {
+  color: rgba(255,255,255,0.82);
+}
+.year-selector-link.is-placeholder {
+  border: 1px dashed rgba(255,255,255,0.1);
 }
 
 /* ===== YEAR PLACEHOLDER PAGES ===== */

@@ -16,42 +16,14 @@
   background-clip: text;
 }
 
-.year-switcher {
-  display: flex;
-  gap: 4px;
-  padding: 4px;
-  max-width: min(100%, 420px);
-  overflow-x: auto;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  scrollbar-width: none;
-}
-.year-switcher::-webkit-scrollbar { display: none; }
-
-.year-btn {
-  flex: 0 0 auto;
-  padding: 5px 14px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.55);
-  transition: var(--transition);
+.page-2025 .year-selector-trigger {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
 }
 
-.year-btn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.year-btn.active {
-  color: #fff;
+.page-2025 .year-selector-link.is-active {
   background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
   box-shadow: 0 2px 12px var(--gold-glow);
-}
-
-.year-btn.is-placeholder {
-  border: 1px dashed rgba(255,255,255,0.16);
 }
 
 .hero-2025 {
