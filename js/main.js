@@ -31,7 +31,7 @@ async function initSiteData() {
 
 async function loadReportData() {
   if (!reportDataPromise) {
-    reportDataPromise = fetch('data/report-data.json', { cache: 'no-store' })
+    reportDataPromise = fetch(resolveSitePath('data/report-data.json'), { cache: 'no-store' })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to load report data: ${response.status}`);
@@ -45,6 +45,14 @@ async function loadReportData() {
   }
 
   return reportDataPromise;
+}
+
+function resolveSitePath(relativePath) {
+  if (window.location.pathname.includes('/pages/')) {
+    return `../${relativePath}`;
+  }
+
+  return relativePath;
 }
 
 function renderYearSwitchers(years) {

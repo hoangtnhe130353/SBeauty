@@ -10,6 +10,7 @@ $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $sourceRoot = [System.IO.Path]::GetFullPath((Join-Path $PWD $SourcePath))
 $repoRootFull = [System.IO.Path]::GetFullPath($repoRoot)
+$pagesRoot = Join-Path $repoRootFull 'pages'
 
 if (-not (Test-Path -LiteralPath $sourceRoot -PathType Container)) {
   throw "Source folder not found: $SourcePath"
@@ -25,9 +26,22 @@ foreach ($file in $requiredRootFiles) {
 $topLevelFiles = Get-ChildItem -LiteralPath $sourceRoot -File |
   Where-Object { $_.Extension -eq '.html' }
 
+if (-not (Test-Path -LiteralPath $pagesRoot -PathType Container)) {
+  New-Item -ItemType Directory -Path $pagesRoot | Out-Null
+}
+
 foreach ($file in $topLevelFiles) {
-  $destination = Join-Path $repoRootFull $file.Name
-  Copy-Item -LiteralPath $file.FullName -Destination $destination -Force
+  $destination = Join-Path $pagesRoot $file.Name
+  $content = Get-Content -Raw -LiteralPath $file.FullName
+  $content = $content.Replace('href="css/', 'href="../css/')
+  $content = $content.Replace('src="css/', 'src="../css/')
+  $content = $content.Replace('href="js/', 'href="../js/')
+  $content = $content.Replace('src="js/', 'src="../js/')
+  $content = $content.Replace('href="assets/', 'href="../assets/')
+  $content = $content.Replace('src="assets/', 'src="../assets/')
+  $content = $content.Replace('href="images/', 'href="../images/')
+  $content = $content.Replace('src="images/', 'src="../images/')
+  Set-Content -LiteralPath $destination -Value $content
   Write-Host "Synced $($file.Name)"
 }
 
@@ -61,4 +75,3 @@ if ($RemoveSource) {
   Remove-Item -LiteralPath $sourceRoot -Recurse -Force
   Write-Host "Removed source folder: $sourceRoot"
 }
-

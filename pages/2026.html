@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PC1 Group - Khung Bao Cao 2023</title>
+  <title>PC1 Group - Khung Bao Cao 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <header id="header">
@@ -25,11 +25,11 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Trang chu</a></li>
         <li><a href="2025.html">Bao cao 2025</a></li>
-        <li><a href="2023.html" class="active">Khung 2023</a></li>
+        <li><a href="2026.html" class="active">Khung 2026</a></li>
       </ul>
 
       <div class="nav-actions">
-        <div class="year-switcher-index" data-year-switcher data-current-year="2023"></div>
+        <div class="year-switcher-index" data-year-switcher data-current-year="2026"></div>
         <button class="hamburger" id="hamburger" aria-label="menu">
           <span></span><span></span><span></span>
         </button>
@@ -40,25 +40,22 @@
   <section class="year-placeholder-page">
     <div class="container year-placeholder-shell">
       <div class="hero-badge">
-        <i class="fas fa-folder-open"></i> Khung noi dung nam 2023
+        <i class="fas fa-calendar-alt"></i> Khung noi dung nam 2026
       </div>
       <h1 class="hero-title">
-        Trang 2023 da san sang <br />
-        <span class="gradient-text">de bo sung noi dung</span>
+        San sang cap nhat <br />
+        <span class="gradient-text">bao cao 2026</span>
       </h1>
       <p class="hero-desc">
-        Hien tai day la placeholder de tranh 404 va giu cau truc navigation theo tung nam. Khi can, chung ta co the nap noi dung 2023 tu ban export tiep theo.
+        Trang nam 2026 da duoc tao san de chung ta co the cap nhat noi dung va so lieu ngay khi co ban export moi tu Genspark hoac tai lieu cong bo chinh thuc.
       </p>
 
-      <div class="year-placeholder-card">
-        <div class="year-placeholder-top">
-          <div class="section-tag light">Nam 2023</div>
-          <span class="year-status pending">Dang cho du lieu</span>
-        </div>
-        <h2>Khung trang da duoc tao</h2>
-        <p>Ban co the cap nhat tiep giao dien, bai viet, KPI va tai lieu cho nam 2023 ma khong can sua lai navigation hay cau truc source.</p>
-        <div class="year-placeholder-note">Neu muon, buoc tiep theo minh co the tiep tuc chuan hoa them cho 2023 theo cung schema JSON nhu 2024-2026.</div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="2025.html"><i class="fas fa-arrow-left"></i> Xem 2025</a>
+        <a class="btn btn-ghost" href="index.html"><i class="fas fa-home"></i> Ve trang 2024</a>
       </div>
+
+      <div class="year-placeholder-card" data-year-summary="2026"></div>
     </div>
   </section>
 
@@ -74,7 +71,7 @@
         </div>
         <div class="footer-links">
           <h4>Nam bao cao</h4>
-          <ul data-report-year-links data-current-year="2023"></ul>
+          <ul data-report-year-links data-current-year="2026"></ul>
         </div>
         <div class="footer-info">
           <h4>Thong tin</h4>
@@ -91,6 +88,7 @@
   </button>
   <div class="toast" id="toast"></div>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
+

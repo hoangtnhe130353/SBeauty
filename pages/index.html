@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC1 Group — Báo cáo & K? ho?ch Phát tri?n</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header id="header">
+    <nav class="navbar container">
+      <a href="#" class="logo">
+        <div class="logo-icon">PC1</div>
+        <div class="logo-text">
+          <span class="logo-main">PC1 GROUP</span>
+          <span class="logo-sub">T?p doàn PC1</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Gi?i thi?u</a></li>
+        <li><a href="#kpi">Ch? s?</a></li>
+        <li><a href="#sectors">M?ng KD</a></li>
+        <li><a href="#highlights">D?u ?n 2024</a></li>
+        <li><a href="#plan">K? ho?ch</a></li>
+        <li><a href="#documents">Tài li?u</a></li>
+        <li><a href="#contact">Liên h?</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Year switcher -->
+        <div class="year-switcher-index" data-year-switcher data-current-year="2024"></div>
+        <button class="btn btn-outline btn-sm" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-download"></i> Báo cáo
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <!-- Animated particles -->
+      <div class="particles" id="particles"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+        <i class="fas fa-bolt"></i> Báo cáo Thu?ng niên 2024
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Ki?n t?o h? t?ng<br />
+        <span class="gradient-text">Nang lu?ng b?n v?ng</span>
+      </h1>
+
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="350">
+        T?ng h?p thông tin n?i b?t v? doanh nghi?p, k?t qu? ho?t d?ng và k? ho?ch phát tri?n c?a
+        <strong>Công ty C? ph?n T?p doàn PC1</strong> — hon 60 nam xây d?ng tuong lai.
+      </p>
+
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="450">
+        <button class="btn btn-primary" onclick="document.getElementById('plan').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-chart-line"></i> Xem K? ho?ch 2024
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-file-pdf"></i> T?i Báo cáo
+        </button>
+      </div>
+
+      <!-- Hero KPI mini strip -->
+      <div class="hero-kpi" data-aos="fade-up" data-aos-delay="550">
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="10089" data-suffix=" t?">0</span>
+          <span class="hero-kpi-label">Doanh thu 2024</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="710" data-suffix=" t?">0</span>
+          <span class="hero-kpi-label">L?i nhu?n sau thu?</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="313" data-suffix=" MW">0</span>
+          <span class="hero-kpi-label">Công su?t phát di?n</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="60" data-suffix="+">0</span>
+          <span class="hero-kpi-label">Nam ho?t d?ng</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Cu?n xu?ng</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">V? chúng tôi</div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+          <h2 class="section-title">PC1 Group —<br/>T? xây l?p di?n<br/>d?n h? sinh thái<br/><span class="gradient-text">nang lu?ng xanh</span></h2>
+          <p>PC1 du?c thành l?p ngày 02/03/1963, kh?i ngu?n t? nhi?m v? xây l?p các công trình truy?n t?i di?n qu?c gia. Qua hon 60 nam, công ty phát tri?n thành t?p doàn da ngành ho?t d?ng trong các linh v?c nang lu?ng, công nghi?p và b?t d?ng s?n.</p>
+          <p>Ð?nh v? chi?n lu?c: <em>"Xây d?ng h? sinh thái kinh t? xanh, s? hóa và b?n v?ng."</em></p>
+
+          <div class="about-cards">
+            <div class="about-card" data-aos="zoom-in" data-aos-delay="200">
+              <i class="fas fa-eye"></i>
+              <h4>T?m nhìn</h4>
+              <p>Tr? thành t?p doàn qu?c t?, uy tín và chuyên nghi?p trong linh v?c nang lu?ng, công nghi?p xanh và thông minh.</p>
+            </div>
+            <div class="about-card" data-aos="zoom-in" data-aos-delay="300">
+              <i class="fas fa-bullseye"></i>
+              <h4>S? m?nh</h4>
+              <p>Ki?n t?o các công trình h? t?ng nang lu?ng b?n v?ng, t?o ra giá tr? lâu dài cho c? dông, d?i tác và c?ng d?ng.</p>
+            </div>
+            <div class="about-card" data-aos="zoom-in" data-aos-delay="400">
+              <i class="fas fa-leaf"></i>
+              <h4>Giá tr? c?t lõi</h4>
+              <p>Ch?t lu?ng – Uy tín – Ð?i m?i – B?n v?ng – H?p tác. Nang lu?ng s?ch vì tuong lai xanh.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual" data-aos="fade-left" data-aos-delay="200">
+          <div class="about-stats-box">
+            <div class="stat-row">
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="300">
+                <div class="stat-icon"><i class="fas fa-industry"></i></div>
+                <div class="stat-info">
+                  <strong class="count-num" data-count="6">0</strong>
+                  <span>M?ng kinh doanh</span>
+                </div>
+              </div>
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="400">
+                <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                <div class="stat-info">
+                  <strong class="count-num" data-count="10">0</strong>
+                  <span>Nhà máy v?n hành</span>
+                </div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="500">
+                <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                <div class="stat-info">
+                  <strong>3+</strong>
+                  <span>Th? tru?ng qu?c t?</span>
+                </div>
+              </div>
+              <div class="stat-block" data-aos="flip-left" data-aos-delay="600">
+                <div class="stat-icon"><i class="fas fa-award"></i></div>
+                <div class="stat-info">
+                  <strong>HOSE</strong>
+                  <span>Niêm y?t ch?ng khoán</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline milestones -->
+            <div class="mini-timeline" data-aos="fade-up" data-aos-delay="300">
+              <h4><i class="fas fa-history"></i> M?c phát tri?n</h4>
+              <div class="timeline-list">
+                <div class="t-item"><span class="t-year">1963</span><span class="t-text">Thành l?p Công ty Xây l?p di?n</span></div>
+                <div class="t-item"><span class="t-year">2005</span><span class="t-text">C? ph?n hóa, chuy?n d?i mô hình</span></div>
+                <div class="t-item"><span class="t-year">2010</span><span class="t-text">Niêm y?t trên HOSE (mã: PC1)</span></div>
+                <div class="t-item"><span class="t-year">2017</span><span class="t-text">Ð?i tên thành PC1 Group</span></div>
+                <div class="t-item active"><span class="t-year">2024</span><span class="t-text">Doanh thu vu?t 10.000 t? d?ng</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KPI SECTION ===== -->
+  <section id="kpi" class="section section-dark">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">Ch? s? n?i b?t</div>
+      <h2 class="section-title light" data-aos="fade-up">K?t qu? kinh doanh <span class="gradient-text">2024</span></h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        Nam 2024 dánh d?u bu?c tang tru?ng vu?t b?c — doanh thu l?n d?u vu?t ngu?ng <strong>10.000 t? d?ng</strong>, l?i nhu?n vu?t k? ho?ch <strong>135%</strong>.
+      </p>
+
+      <div class="kpi-grid" data-aos="fade-up" data-aos-delay="150">
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="kpi-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="kpi-num count-num" data-count="10089" data-suffix="">10,089</div>
+          <div class="kpi-unit">t? d?ng</div>
+          <div class="kpi-label">T?ng doanh thu 2024</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> +30% so v?i 2023</div>
+        </div>
+        <div class="kpi-card highlight" data-aos="zoom-in" data-aos-delay="150">
+          <div class="kpi-icon"><i class="fas fa-coins"></i></div>
+          <div class="kpi-num count-num" data-count="710" data-suffix="">710</div>
+          <div class="kpi-unit">t? d?ng</div>
+          <div class="kpi-label">L?i nhu?n sau thu?</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> Vu?t 135% k? ho?ch</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="kpi-icon"><i class="fas fa-bolt"></i></div>
+          <div class="kpi-num">313</div>
+          <div class="kpi-unit">MW</div>
+          <div class="kpi-label">T?ng công su?t phát di?n</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> 10 nhà máy ho?t d?ng</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="250">
+          <div class="kpi-icon"><i class="fas fa-percentage"></i></div>
+          <div class="kpi-num">15%</div>
+          <div class="kpi-unit"></div>
+          <div class="kpi-label">C? t?c nam 2024</div>
+          <div class="kpi-change neutral"><i class="fas fa-equals"></i> Duy trì ?n d?nh</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="kpi-icon"><i class="fas fa-globe-asia"></i></div>
+          <div class="kpi-num">3</div>
+          <div class="kpi-unit">qu?c gia</div>
+          <div class="kpi-label">Th? tru?ng qu?c t? m?i</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> PHL · Lào · AUS</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="350">
+          <div class="kpi-icon"><i class="fas fa-building"></i></div>
+          <div class="kpi-num">200</div>
+          <div class="kpi-unit">ha</div>
+          <div class="kpi-label">KCN Nomura 2 H?i Phòng</div>
+          <div class="kpi-change up"><i class="fas fa-check-circle"></i> Ðu?c Chính ph? phê duy?t</div>
+        </div>
+      </div>
+
+      <!-- Chart section -->
+      <div class="chart-section" data-aos="fade-up" data-aos-delay="200">
+        <div class="chart-row">
+          <div class="chart-box" data-aos="fade-right" data-aos-delay="100">
+            <h3><i class="fas fa-chart-bar"></i> Doanh thu & L?i nhu?n (2022–2024)</h3>
+            <div style="height: 300px; position:relative;">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-box" data-aos="fade-left" data-aos-delay="100">
+            <h3><i class="fas fa-chart-pie"></i> Co c?u doanh thu theo m?ng 2024</h3>
+            <div style="height: 300px; position:relative;">
+              <canvas id="segmentChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUSINESS SECTORS ===== -->
+  <section id="sectors" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">M?ng kinh doanh</div>
+      <h2 class="section-title" data-aos="fade-up">H? sinh thái <span class="gradient-text">da ngành</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        PC1 ho?t d?ng trên 6 m?ng kinh doanh chi?n lu?c, t?o ra chu?i giá tr? tích h?p t? xây l?p, v?n hành d?n d?u tu phát tri?n.
+      </p>
+
+      <div class="sectors-grid">
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="sector-num">01</div>
+          <div class="sector-icon"><i class="fas fa-hard-hat"></i></div>
+          <h3>T?ng th?u Xây l?p di?n</h3>
+          <p>D?n d?u c? nu?c v? xây l?p di?n. Nang l?c t?ng th?u EPC các d? án truy?n t?i d?n <strong>500kV</strong> và nhà máy nang lu?ng tái t?o.</p>
+          <div class="sector-tag">Linh v?c c?t lõi</div>
+          <div class="sector-highlight">
+            <i class="fas fa-star"></i> Hoàn thành du?ng dây 500kV m?ch 3 nam 2024
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="sector-num">02</div>
+          <div class="sector-icon green"><i class="fas fa-water"></i></div>
+          <h3>Ð?u tu Nang lu?ng</h3>
+          <p>S? h?u và v?n hành <strong>10 nhà máy th?y di?n & di?n gió</strong>, t?ng công su?t <strong>313 MW</strong>. Ðang xây thêm 2 nhà máy m?i.</p>
+          <div class="sector-tag green">Tang tru?ng nhanh</div>
+          <div class="sector-highlight">
+            <i class="fas fa-plus-circle"></i> Kh?i công B?o L?c A & Thu?ng Hà 2024
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="sector-num">03</div>
+          <div class="sector-icon blue"><i class="fas fa-city"></i></div>
+          <h3>Khu công nghi?p</h3>
+          <p>Phát tri?n <strong>khu công nghi?p sinh thái, thông minh</strong>. D? án KCN Nomura – H?i Phòng, Yên Phong II-A thu hút FDI l?n.</p>
+          <div class="sector-tag blue">Chi?n lu?c dài h?n</div>
+          <div class="sector-highlight">
+            <i class="fas fa-check-circle"></i> KCN Nomura 2 ~200ha du?c phê duy?t
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="sector-num">04</div>
+          <div class="sector-icon orange"><i class="fas fa-cogs"></i></div>
+          <h3>S?n xu?t Công nghi?p</h3>
+          <p>Thi?t k?, ch? t?o <strong>c?t thép don thân và c?t thép liên k?t thanh</strong> cho du?ng dây truy?n t?i di?n d?n 750kV trong và ngoài nu?c.</p>
+          <div class="sector-tag orange">Xu?t kh?u</div>
+          <div class="sector-highlight">
+            <i class="fas fa-globe"></i> Xu?t kh?u sang Philippines, Lào, Australia
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="sector-num">05</div>
+          <div class="sector-icon purple"><i class="fas fa-mountain"></i></div>
+          <h3>Khai thác Khoáng s?n</h3>
+          <p>V?n hành d? án khai thác l? thiên <strong>Nickel – Ð?ng</strong> t?i Cao B?ng v?i công su?t thi?t k? <strong>600.000 t?n qu?ng/nam</strong>.</p>
+          <div class="sector-tag purple">Tài nguyên chi?n lu?c</div>
+          <div class="sector-highlight">
+            <i class="fas fa-map-marker-alt"></i> Cao B?ng – quy mô l?n nh?t vùng
+          </div>
+        </div>
+
+        <div class="sector-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="sector-num">06</div>
+          <div class="sector-icon teal"><i class="fas fa-home"></i></div>
+          <h3>B?t d?ng s?n Dân d?ng</h3>
+          <p>Ð?u tu và phát tri?n các <strong>t? h?p nhà ?, chung cu cao c?p</strong> và van phòng cho thuê t?i các dô th? l?n.</p>
+          <div class="sector-tag teal">Ðô th? hóa</div>
+          <div class="sector-highlight">
+            <i class="fas fa-building"></i> D? án t?i Hà N?i và các t?nh tr?ng di?m
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HIGHLIGHTS 2024 ===== -->
+  <section id="highlights" class="section section-gradient">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">D?u ?n 2024</div>
+      <h2 class="section-title light" data-aos="fade-up">Nh?ng c?t m?c <span class="gradient-text">n?i b?t</span></h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        Nam 2024 — giai do?n tang tru?ng vu?t b?c, nhi?u d? án h? t?ng tr?ng di?m, bu?c ti?n quan tr?ng trên th? tru?ng qu?c t?.
+      </p>
+
+      <div class="highlights-grid">
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="100">
+          <div class="hl-icon"><i class="fas fa-plug"></i></div>
+          <div class="hl-badge">D? án Qu?c gia</div>
+          <h3>Ðu?ng dây 500kV m?ch 3</h3>
+          <p>Hoàn thành xu?t s?c thi công <strong>du?ng dây truy?n t?i 500kV m?ch 3</strong> — d? án tr?ng di?m qu?c gia, gi?i quy?t cang th?ng di?n cho mi?n Nam.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="180">
+          <div class="hl-icon"><i class="fas fa-water"></i></div>
+          <div class="hl-badge">M? r?ng nang lu?ng</div>
+          <h3>2 Nhà máy th?y di?n m?i</h3>
+          <p>Kh?i công xây d?ng th?y di?n <strong>B?o L?c A</strong> và <strong>Thu?ng Hà</strong> t?i Cao B?ng, nâng t?ng s? nhà máy lên 12 d? án.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="260">
+          <div class="hl-icon"><i class="fas fa-industry"></i></div>
+          <div class="hl-badge">Chính ph? phê duy?t</div>
+          <h3>KCN Nomura 2 H?i Phòng</h3>
+          <p>Ðu?c Chính ph? ch?p thu?n ch? truong d?u tu <strong>KCN Nomura 2</strong> g?n 200 ha, t?ng v?n <strong>2.800 t? d?ng</strong>.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="340">
+          <div class="hl-icon"><i class="fas fa-plane"></i></div>
+          <div class="hl-badge">Vuon t?m qu?c t?</div>
+          <h3>Xu?t kh?u & H?p d?ng EPC</h3>
+          <p>Ký k?t h?p d?ng EPC và xu?t kh?u s?n ph?m t?i <strong>Philippines, Lào và Australia</strong> — bu?c ti?n quan tr?ng trong chi?n lu?c qu?c t? hóa.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="420">
+          <div class="hl-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="hl-badge">Tài chính vu?t tr?i</div>
+          <h3>L?i nhu?n vu?t 135% k? ho?ch</h3>
+          <p>LNST d?t <strong>710 t? d?ng</strong>, vu?t 135% k? ho?ch. Doanh thu l?n d?u vu?t ngu?ng <strong>10.000 t? d?ng</strong>.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="500">
+          <div class="hl-icon"><i class="fas fa-leaf"></i></div>
+          <div class="hl-badge">Phát tri?n b?n v?ng</div>
+          <h3>Báo cáo ESG l?n d?u tích h?p</h3>
+          <p>Phát hành <strong>Báo cáo Phát tri?n B?n v?ng 2024</strong> tích h?p trong Báo cáo thu?ng niên — cam k?t ESG m?nh m? hon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLAN & STRATEGY ===== -->
+  <section id="plan" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">K? ho?ch & Chi?n lu?c</div>
+      <h2 class="section-title" data-aos="fade-up">Ð?nh hu?ng <span class="gradient-text">2024 – 2026</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Theo Ngh? quy?t Ð?i h?i d?ng c? dông 2024, PC1 d?t m?c tiêu tang tru?ng m?nh m? và ?n d?nh trong trung h?n.
+      </p>
+
+      <div class="plan-grid">
+        <!-- Targets -->
+        <div class="plan-targets" data-aos="fade-right" data-aos-delay="100">
+          <h3><i class="fas fa-bullseye"></i> Ch? tiêu nam 2024</h3>
+          <div class="target-item">
+            <div class="target-label">T?ng doanh thu</div>
+            <div class="target-bar-wrap">
+              <div class="target-bar" data-width="93" style="width:0%"></div>
+            </div>
+            <div class="target-nums">
+              <span class="target-plan">KH: 10.822 t?</span>
+              <span class="target-actual achieved">TH: 10.089 t? ?</span>
+            </div>
+          </div>
+          <div class="target-item">
+            <div class="target-label">L?i nhu?n sau thu?</div>
+            <div class="target-bar-wrap">
+              <div class="target-bar exceed" data-width="100" style="width:0%"></div>
+            </div>
+            <div class="target-nums">
+              <span class="target-plan">KH: 525 t?</span>
+              <span class="target-actual achieved">TH: 710 t? ? (+135%)</span>
+            </div>
+          </div>
+          <div class="target-item">
+            <div class="target-label">C? t?c</div>
+            <div class="target-bar-wrap">
+              <div class="target-bar" data-width="100" style="width:0%"></div>
+            </div>
+            <div class="target-nums">
+              <span class="target-plan">KH: 15%</span>
+              <span class="target-actual achieved">TH: 15% ?</span>
+            </div>
+          </div>
+
+          <div class="context-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="context-icon"><i class="fas fa-info-circle"></i></div>
+            <div>
+              <strong>Ngu?n:</strong> Ngh? quy?t ÐHÐCÐ thu?ng niên 2024, k?t qu? ho?t d?ng báo cáo thu?ng niên 2024.
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy pillars -->
+        <div class="plan-strategy" data-aos="fade-left" data-aos-delay="100">
+          <h3><i class="fas fa-chess"></i> Tr? c?t chi?n lu?c</h3>
+          <div class="strategy-list">
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="150">
+              <div class="si-icon"><i class="fas fa-trophy"></i></div>
+              <div class="si-content">
+                <h4>C?ng c? v? th? Xây l?p di?n</h4>
+                <p>Duy trì v? trí s? 1 th? ph?n EPC truy?n t?i di?n t?i Vi?t Nam, tang cu?ng nang l?c k? thu?t và d?i ngu chuyên gia.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="220">
+              <div class="si-icon"><i class="fas fa-solar-panel"></i></div>
+              <div class="si-content">
+                <h4>M? r?ng danh m?c Nang lu?ng</h4>
+                <p>Phát tri?n thêm các d? án th?y di?n, di?n gió, hu?ng t?i t?ng công su?t 500+ MW trong trung h?n.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="290">
+              <div class="si-icon"><i class="fas fa-map-marked-alt"></i></div>
+              <div class="si-content">
+                <h4>Phát tri?n Khu công nghi?p</h4>
+                <p>M? r?ng và t?i uu hóa KCN hi?n h?u, ti?p t?c phát tri?n KCN Nomura 2, thu hút FDI ch?t lu?ng cao.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="360">
+              <div class="si-icon"><i class="fas fa-globe"></i></div>
+              <div class="si-content">
+                <h4>Qu?c t? hóa</h4>
+                <p>Tang hi?n di?n t?i Philippines, Lào, Australia và ti?p t?c tìm ki?m th? tru?ng m?i trong khu v?c ASEAN.</p>
+              </div>
+            </div>
+            <div class="strategy-item" data-aos="fade-left" data-aos-delay="430">
+              <div class="si-icon"><i class="fas fa-seedling"></i></div>
+              <div class="si-content">
+                <h4>ESG & Tang tru?ng xanh</h4>
+                <p>Tích h?p tiêu chí ESG vào chi?n lu?c kinh doanh, hu?ng t?i net-zero và phát tri?n b?n v?ng dài h?n.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue growth chart -->
+      <div class="growth-chart-box" data-aos="fade-up" data-aos-delay="200">
+        <h3><i class="fas fa-chart-area"></i> L? trình tang tru?ng Doanh thu (2022 – 2026F)</h3>
+        <div style="height: 280px; position:relative;">
+          <canvas id="growthChart"></canvas>
+        </div>
+        <p class="chart-note">* 2025F–2026F: d? phóng n?i b? d?a theo k? ho?ch và xu hu?ng tang tru?ng</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENTS ===== -->
+  <section id="documents" class="section section-light">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Tài li?u & Báo cáo</div>
+      <h2 class="section-title" data-aos="fade-up">Thu vi?n <span class="gradient-text">tài li?u công b?</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Các tài li?u chính th?c c?a Công ty C? ph?n T?p doàn PC1, du?c công b? t?i c? dông và nhà d?u tu.
+      </p>
+
+      <!-- Filters -->
+      <div class="doc-filters" data-aos="fade-up" data-aos-delay="150">
+        <button class="filter-btn active" data-filter="all">T?t c?</button>
+        <button class="filter-btn" data-filter="annual">Báo cáo thu?ng niên</button>
+        <button class="filter-btn" data-filter="agm">Ngh? quy?t ÐHÐCÐ</button>
+        <button class="filter-btn" data-filter="finance">Tài chính</button>
+        <button class="filter-btn" data-filter="news">Thông báo</button>
+      </div>
+
+      <div class="docs-grid" id="docsGrid">
+
+        <div class="doc-card" data-category="annual" data-aos="fade-up" data-aos-delay="100">
+          <div class="doc-type-badge annual">Báo cáo thu?ng niên</div>
+          <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo thu?ng niên 2024</h4>
+            <p>T?ng h?p d?y d? k?t qu? ho?t d?ng, chi?n lu?c, qu?n tr? công ty và Báo cáo Phát tri?n B?n v?ng nam 2024.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 22/04/2025 · <i class="fas fa-file-alt"></i> PDF · ~15MB</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> T?i
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="agm" data-aos="fade-up" data-aos-delay="150">
+          <div class="doc-type-badge agm">Ngh? quy?t ÐHÐCÐ</div>
+          <div class="doc-icon"><i class="fas fa-gavel"></i></div>
+          <div class="doc-info">
+            <h4>Ngh? quy?t ÐHÐCÐ thu?ng niên 2024</h4>
+            <p>K? ho?ch kinh doanh 2024, phân ph?i l?i nhu?n, phê duy?t chi?n lu?c và phuong án phát hành c? phi?u c? t?c.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 08/10/2024 · <i class="fas fa-file-alt"></i> PDF</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> T?i
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="annual" data-aos="fade-up" data-aos-delay="200">
+          <div class="doc-type-badge annual">Báo cáo thu?ng niên</div>
+          <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo thu?ng niên 2023</h4>
+            <p>K?t qu? kinh doanh nam 2023, chi?n lu?c và d?nh hu?ng. Doanh thu d?t 7.775 t? d?ng, LNST 303 t? d?ng.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 23/05/2024 · <i class="fas fa-file-alt"></i> PDF</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://static2.vietstock.vn/vietstock/2024/5/23/20240523_pc1_240523_annual_report_2023.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://static2.vietstock.vn/vietstock/2024/5/23/20240523_pc1_240523_annual_report_2023.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> T?i
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="finance" data-aos="fade-up" data-aos-delay="250">
+          <div class="doc-type-badge finance">Báo cáo tài chính</div>
+          <div class="doc-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="doc-info">
+            <h4>BCTC Bán niên 2025 (Ti?ng Anh)</h4>
+            <p>Báo cáo tài chính riêng l? gi?a niên d? Q2/2025 c?a PC1 Group Joint Stock Company (phiên b?n ti?ng Anh).</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 05/09/2025 · <i class="fas fa-file-alt"></i> PDF · EN</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> T?i
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="news" data-aos="fade-up" data-aos-delay="300">
+          <div class="doc-type-badge news">Phân tích th? tru?ng</div>
+          <div class="doc-icon"><i class="fas fa-search-dollar"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo c?p nh?t PC1 (VCBS 11/2024)</h4>
+            <p>C?p nh?t lu?n di?m d?u tu, tri?n v?ng tang tru?ng 9T2024 và d? báo k?t qu? kinh doanh d?n cu?i nam 2024.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 11/2024 · <i class="fas fa-file-alt"></i> PDF · VCBS</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://cafef1.mediacdn.vn/Images/Uploaded/DuLieuDownload/PhanTichBaoCao/PC1_251124_VCBS25112024093012.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://cafef1.mediacdn.vn/Images/Uploaded/DuLieuDownload/PhanTichBaoCao/PC1_251124_VCBS25112024093012.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> T?i
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-category="finance" data-aos="fade-up" data-aos-delay="350">
+          <div class="doc-type-badge finance">Phân tích</div>
+          <div class="doc-icon"><i class="fas fa-microscope"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo kh?i d?u – Shinhan Sec</h4>
+            <p>Báo cáo phân tích toàn di?n v? PC1 Group, các m?ng kinh doanh, d?nh giá và khuy?n ngh? BUY c?a Shinhan Securities.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 2024 · <i class="fas fa-file-alt"></i> PDF · EN · Shinhan</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://shinhansec.com.vn/uploads/report/PC1_Initiation_EN_v13.pdf" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-eye"></i> Xem
+            </a>
+            <a href="https://shinhansec.com.vn/uploads/report/PC1_Initiation_EN_v13.pdf" download class="btn btn-outline btn-sm">
+              <i class="fas fa-download"></i> T?i
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / IR ===== -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="section-tag light">Liên h?</div>
+          <h2 class="section-title light">Quan h? <span class="gradient-text">Nhà d?u tu</span></h2>
+          <p class="light-text">M?i thông tin liên quan d?n c? phi?u, tài li?u IR và h?p tác d?u tu, vui lòng liên h? b? ph?n Quan h? Nhà d?u tu c?a PC1 Group.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-building"></i></div>
+              <div>
+                <strong>Tr? s? chính</strong>
+                <p data-contact="address">Tòa CT2, S? 583 Ðu?ng Nguy?n Trãi, P. Thanh Li?t , TP Hà N?i, Vi?t Nam</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Ði?n tho?i</strong>
+                <p data-contact="phone">+84 24 38456329</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-globe"></i></div>
+              <div>
+                <strong>Website</strong>
+                <p data-contact="website">www.pc1group.vn</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <strong>Mã ch?ng khoán</strong>
+                <p data-contact="stockCode">PC1 - Sàn HOSE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form" data-aos="fade-left">
+          <div class="form-box">
+            <h3><i class="fas fa-envelope"></i> G?i yêu c?u thông tin</h3>
+            <div class="form-group">
+              <label>H? và tên</label>
+              <input type="text" placeholder="Nguy?n Van A" id="f-name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="email@example.com" id="f-email" />
+            </div>
+            <div class="form-group">
+              <label>Lo?i thông tin c?n</label>
+              <select id="f-type">
+                <option>Báo cáo tài chính</option>
+                <option>K? ho?ch kinh doanh</option>
+                <option>H?p tác d?u tu</option>
+                <option>Tài li?u doanh nghi?p</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>N?i dung</label>
+              <textarea rows="4" placeholder="Nh?p n?i dung yêu c?u..." id="f-msg"></textarea>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="handleFormSubmit()">
+              <i class="fas fa-paper-plane"></i> G?i yêu c?u
+            </button>
+            <p class="form-note">* Website demo – form chua k?t n?i backend. Vui lòng liên h? tr?c ti?p qua email/di?n tho?i.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">PC1</div>
+            <span>PC1 GROUP</span>
+          </div>
+          <p>Công ty C? ph?n T?p doàn PC1 — Hon 60 nam xây d?ng h? t?ng nang lu?ng Vi?t Nam. Ki?n t?o h? sinh thái kinh t? xanh, s? hóa và b?n v?ng.</p>
+          <div class="footer-badges">
+            <span class="badge"><i class="fas fa-chart-bar"></i> HOSE: PC1</span>
+            <span class="badge"><i class="fas fa-leaf"></i> ESG 2024</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Trang</h4>
+          <ul>
+            <li><a href="#about">Gi?i thi?u</a></li>
+            <li><a href="#kpi">Ch? s? 2024</a></li>
+            <li><a href="#sectors">M?ng kinh doanh</a></li>
+            <li><a href="#highlights">D?u ?n 2024</a></li>
+            <li><a href="#plan">K? ho?ch & Chi?n lu?c</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Tài li?u</h4>
+          <ul>
+            <li><a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank">Báo cáo thu?ng niên 2024</a></li>
+            <li><a href="https://static2.vietstock.vn/vietstock/2024/5/23/20240523_pc1_240523_annual_report_2023.pdf" target="_blank">Báo cáo thu?ng niên 2023</a></li>
+            <li><a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" target="_blank">Ngh? quy?t ÐHÐCÐ 2024</a></li>
+            <li><a href="#documents">Thu vi?n tài li?u</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-info">
+          <h4>Thông tin</h4>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-contact="address">Tòa CT2, S? 583 Ðu?ng Nguy?n Trãi, P. Thanh Li?t , TP Hà N?i, Vi?t Nam</span></p>
+          <p><i class="fas fa-phone"></i> <span data-contact="phone">+84 24 38456329</span></p>
+          <p><i class="fas fa-globe"></i> <span data-contact="website">www.pc1group.vn</span></p>
+          <div class="footer-note">
+            <i class="fas fa-info-circle"></i>
+            <span>D? li?u t?ng h?p t? Báo cáo thu?ng niên 2024 và các tài li?u chính th?c c?a PC1.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Công ty C? ph?n T?p doàn PC1 · B?n demo website – không ph?i website chính th?c · D? li?u mang tính minh h?a</p>
+        <p>Ngu?n: <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank">Annual Report 2024</a> · <a href="https://cmsv5.fiingroup.vn/medialib/FG/2024/2024-10/2024-10-08/20241008_PC1-241008-AGM-resolution-TL.pdf" target="_blank">AGM Resolution 2024</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- JS -->
+  <script src="../js/main.js"></script>
+  <script src="../js/charts.js"></script>
+</body>
+</html>
+

@@ -2,16 +2,13 @@
 
 Static website demo for `PC1 Group`, currently publishing:
 
-- `index.html`: 2024 report landing page
-- `2025.html`: 2025 report and outlook page
+- `pages/index.html`: 2024 report landing page
+- `pages/2025.html`: 2025 report and outlook page
 
 ## Project structure
 
 ```text
 .
-|-- index.html
-|-- 2025.html
-|-- 2026.html
 |-- css/
 |   |-- style.css
 |   `-- 2025.css
@@ -21,8 +18,16 @@ Static website demo for `PC1 Group`, currently publishing:
 |   |-- main.js
 |   |-- charts.js
 |   `-- charts2025.js
-`-- scripts/
-    `-- import-genspark-export.ps1
+|-- pages/
+|   |-- index.html
+|   |-- 2021.html
+|   |-- 2022.html
+|   |-- 2023.html
+|   |-- 2025.html
+|   `-- 2026.html
+|-- scripts/
+|   `-- import-genspark-export.ps1
+`-- index.html          # root entry/redirect for GitHub Pages
 ```
 
 ## Better update workflow
@@ -39,7 +44,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\import-genspark-export.ps1 -S
 
 The script will:
 
-- sync all top-level `.html` files
+- sync all exported `.html` files into `pages/`
 - sync `css/`, `js/`, `assets/`, `images/` when present
 - keep repo-only files such as `.git/`, `.nojekyll`, and this README untouched
 - optionally delete the imported export folder after syncing
