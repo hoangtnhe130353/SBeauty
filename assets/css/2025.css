@@ -21,6 +21,13 @@
   border-color: rgba(255,255,255,0.12);
 }
 
+.page-2025 .year-selector-trigger:hover,
+.page-2025 .year-selector[open] .year-selector-trigger {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(245, 158, 11, 0.22);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.22);
+}
+
 .page-2025 .year-selector-link.is-active {
   background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
   box-shadow: 0 2px 12px var(--gold-glow);
@@ -32,7 +39,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: calc(70px + 40px) 0 64px;
+  padding: calc(var(--header-h) + 40px) 0 64px;
 }
 
 .hero-overlay-2025 {
@@ -589,7 +596,7 @@
 
 @media (max-width: 768px) {
   .hero-2025 {
-    padding-top: calc(70px + 28px);
+    padding-top: calc(var(--header-h) + 28px);
   }
 
   .hero-year-badge {

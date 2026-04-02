@@ -66,15 +66,17 @@ function renderYearSwitchers(years) {
 
       return `<a href="${item.href}" class="${classes.join(' ')}"${item.year === currentYear ? ' aria-current="page"' : ''}>
         <span>${item.label}</span>
-        ${item.placeholder ? '<small>Sáº¯p cÃ³</small>' : ''}
+        ${item.placeholder ? '<small>Sắp có</small>' : ''}
       </a>`;
     }).join('');
 
     container.innerHTML = `
       <details class="year-selector">
         <summary class="year-selector-trigger">
-          <span class="year-selector-caption">NÄƒm bÃ¡o cÃ¡o</span>
-          <strong>${currentItem ? currentItem.label : currentYear}</strong>
+          <span class="year-selector-text">
+            <span class="year-selector-caption">Năm báo cáo</span>
+            <strong>${currentItem ? currentItem.label : currentYear}</strong>
+          </span>
           <i class="fas fa-chevron-down" aria-hidden="true"></i>
         </summary>
         <div class="year-selector-menu">
@@ -90,8 +92,8 @@ function renderReportYearLinks(years) {
     const currentYear = container.dataset.currentYear;
     container.innerHTML = years.map((item) => {
       const linkClass = item.year === currentYear ? ' class="active-link"' : '';
-      const suffix = item.placeholder ? ' (khung sáºµn)' : '';
-      return `<li><a href="${item.href}"${linkClass}>BÃ¡o cÃ¡o ${item.year}${suffix}</a></li>`;
+      const suffix = item.placeholder ? ' (khung sẵn)' : '';
+      return `<li><a href="${item.href}"${linkClass}>Báo cáo ${item.year}${suffix}</a></li>`;
     }).join('');
   });
 }
@@ -117,7 +119,7 @@ function renderYearSummaries(reports) {
 
     container.innerHTML = `
       <div class="year-placeholder-top">
-        <div class="section-tag light">NÄƒm ${report.year}</div>
+        <div class="section-tag light">Năm ${report.year}</div>
         <span class="year-status ${statusClass}">${report.statusLabel || report.status}</span>
       </div>
       <h2>${report.title}</h2>
@@ -388,17 +390,17 @@ function handleFormSubmit() {
   const msg = document.getElementById('f-msg')?.value.trim();
 
   if (!name || !email) {
-    showToast('âš ï¸ Vui lÃ²ng Ä‘iá»n Ä‘áº§y Ä‘á»§ Há» tÃªn vÃ  Email.', 'warn');
+    showToast('Vui lòng điền đầy đủ Họ tên và Email.', 'warn');
     return;
   }
 
   if (!isValidEmail(email)) {
-    showToast('âš ï¸ Email khÃ´ng há»£p lá»‡.', 'warn');
+    showToast('Email không hợp lệ.', 'warn');
     return;
   }
 
   // Simulate sending
-  showToast('âœ… YÃªu cáº§u Ä‘Ã£ Ä‘Æ°á»£c ghi nháº­n! ChÃºng tÃ´i sáº½ pháº£n há»“i sá»›m.', 'success');
+  showToast('Yêu cầu đã được ghi nhận! Chúng tôi sẽ phản hồi sớm.', 'success');
 
   // Clear form
   setTimeout(() => {
@@ -439,7 +441,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      const headerH = 70;
+      const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 70;
       const top = target.getBoundingClientRect().top + window.scrollY - headerH;
       window.scrollTo({ top, behavior: 'smooth' });
     }
