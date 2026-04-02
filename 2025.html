@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC1 Group — Báo cáo & Kế hoạch 2025</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/2025.css" />
+</head>
+
+<body class="page-2025">
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">PC1</div>
+        <div class="logo-text">
+          <span class="logo-main">PC1 GROUP</span>
+          <span class="logo-sub">Tập đoàn PC1</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="index.html#about">Giới thiệu</a></li>
+        <li><a href="index.html#sectors">Mảng KD</a></li>
+        <li><a href="#overview" class="active">Tổng quan 2025</a></li>
+        <li><a href="#kpi2025">Chỉ số 2025</a></li>
+        <li><a href="#quarterly">Theo quý</a></li>
+        <li><a href="#plan2026">Kế hoạch 2026</a></li>
+        <li><a href="#docs2025">Tài liệu</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Year switcher -->
+        <div class="year-switcher">
+          <a href="index.html" class="year-btn">2024</a>
+          <a href="2025.html" class="year-btn active">2025</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO 2025 ===== -->
+  <section id="hero2025" class="hero-2025">
+    <div class="hero-bg">
+      <div class="hero-overlay-2025"></div>
+      <div class="particles" id="particles"></div>
+      <!-- Decorative grid -->
+      <div class="hero-grid-lines"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="breadcrumb" data-aos="fade-down">
+        <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Báo cáo 2025</span>
+      </div>
+
+      <div class="hero-year-badge" data-aos="fade-up" data-aos-delay="100">
+        <span class="year-num">2025</span>
+        <div class="year-info">
+          <strong>Báo cáo Kết quả &amp; Kế hoạch</strong>
+          <span>Công ty Cổ phần Tập đoàn PC1</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Bứt phá lợi nhuận —<br/>
+        <span class="gradient-text-gold">Vượt kế hoạch vượt trội</span>
+      </h1>
+
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="330">
+        Năm 2025, PC1 Group ghi nhận lợi nhuận sau thuế đạt <strong>1.050 tỷ đồng</strong>, tăng <strong>+48%</strong> so với 2024, vượt xa kế hoạch đề ra — nhờ tăng tốc đồng bộ ở cả ba trụ cột <em>Xây lắp điện · Năng lượng · Khai khoáng</em>.
+      </p>
+
+      <!-- 2025 KPI Hero strip -->
+      <div class="hero-kpi hero-kpi-2025" data-aos="fade-up" data-aos-delay="430">
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="14200" data-suffix=" tỷ">0</span>
+          <span class="hero-kpi-label">Doanh thu 2025</span>
+          <span class="kpi-vs">vs KH 14.317 tỷ</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num gold" data-count="1050" data-suffix=" tỷ">0</span>
+          <span class="hero-kpi-label">Lợi nhuận sau thuế</span>
+          <span class="kpi-vs up">+48% so với 2024</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num gold" data-count="125" data-suffix="%">0</span>
+          <span class="hero-kpi-label">% Hoàn thành KH LNST</span>
+          <span class="kpi-vs up">Vượt kế hoạch</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi-item">
+          <span class="hero-kpi-num" data-count="15" data-suffix="%">0</span>
+          <span class="hero-kpi-label">Cổ tức 2025</span>
+          <span class="kpi-vs">Duy trì ổn định</span>
+        </div>
+      </div>
+
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+        <button class="btn btn-gold" onclick="document.getElementById('kpi2025').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-chart-line"></i> Xem chi tiết kết quả
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('docs2025').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-file-pdf"></i> Tài liệu 2025
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Cuộn xuống</span>
+    </div>
+  </section>
+
+  <!-- ===== OVERVIEW BANNER ===== -->
+  <section id="overview" class="section overview-banner">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-text" data-aos="fade-right">
+          <div class="section-tag">Tổng quan năm 2025</div>
+          <h2 class="section-title">Năm bứt phá —<br/><span class="gradient-text">Bộ ba trụ cột tăng tốc</span></h2>
+          <p>Năm 2025 là năm bứt phá toàn diện của PC1 Group khi cả ba mảng cốt lõi — <strong>Xây lắp điện</strong>, <strong>Đầu tư Năng lượng</strong> và <strong>Khai khoáng</strong> — đều ghi nhận tăng trưởng mạnh. Kết quả này phản ánh chiến lược đa ngành, khả năng triển khai dự án quy mô lớn và sự phục hồi mạnh mẽ của thị trường điện.</p>
+          <p>Đây là năm đầu tiên trong lịch sử PC1 ghi nhận LNST vượt ngưỡng <strong>1.000 tỷ đồng</strong>, đánh dấu mốc quan trọng trên hành trình hướng tới vốn hóa 1 tỷ USD vào năm 2028.</p>
+
+          <div class="overview-milestones">
+            <div class="milestone" data-aos="fade-up" data-aos-delay="100">
+              <div class="ms-dot gold"></div>
+              <div><strong>Lần đầu LNST vượt 1.000 tỷ đồng</strong> trong lịch sử PC1</div>
+            </div>
+            <div class="milestone" data-aos="fade-up" data-aos-delay="170">
+              <div class="ms-dot"></div>
+              <div><strong>Doanh thu xây lắp tăng gần gấp đôi</strong> nhờ các dự án điện lớn Q4</div>
+            </div>
+            <div class="milestone" data-aos="fade-up" data-aos-delay="240">
+              <div class="ms-dot green"></div>
+              <div><strong>Năng lượng tái tạo</strong> ổn định, 12 nhà máy hoạt động đồng loạt</div>
+            </div>
+            <div class="milestone" data-aos="fade-up" data-aos-delay="310">
+              <div class="ms-dot blue"></div>
+              <div><strong>Khai khoáng Nickel–Đồng</strong> đóng góp đáng kể vào LNST</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-chart-wrap" data-aos="fade-left" data-aos-delay="100">
+          <div class="chart-box-light">
+            <h3><i class="fas fa-chart-bar"></i> Lịch sử LNST PC1 (2020–2025)</h3>
+            <div style="height:320px;position:relative;">
+              <canvas id="historyChart"></canvas>
+            </div>
+            <p class="chart-note-light">* Nguồn: Báo cáo thường niên và BCTC đã kiểm toán của PC1 Group</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KPI 2025 ===== -->
+  <section id="kpi2025" class="section section-dark">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">Chỉ số 2025</div>
+      <h2 class="section-title light" data-aos="fade-up">
+        Kết quả kinh doanh <span class="gradient-text-gold">2025</span>
+      </h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        So sánh kế hoạch đặt ra tại ĐHĐCĐ 2025 và kết quả thực tế đạt được — năm vượt kế hoạch toàn diện ở chỉ tiêu lợi nhuận.
+      </p>
+
+      <!-- Comparison table -->
+      <div class="compare-table-wrap" data-aos="fade-up" data-aos-delay="150">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Chỉ tiêu</th>
+              <th>Thực hiện 2024</th>
+              <th>Kế hoạch 2025</th>
+              <th>Thực hiện 2025</th>
+              <th>% Hoàn thành KH</th>
+              <th>Tăng trưởng YoY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tổng doanh thu</strong></td>
+              <td>10.089 tỷ</td>
+              <td>14.317 tỷ</td>
+              <td><strong class="val-gold">~14.200 tỷ</strong></td>
+              <td><span class="badge-pct near">~99%</span></td>
+              <td><span class="badge-growth up">+41% ↑</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Lợi nhuận sau thuế</strong></td>
+              <td>710 tỷ</td>
+              <td>~837 tỷ</td>
+              <td><strong class="val-gold">1.050 tỷ</strong></td>
+              <td><span class="badge-pct over">125% ✓</span></td>
+              <td><span class="badge-growth up">+48% ↑</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cổ tức</strong></td>
+              <td>15%</td>
+              <td>15%</td>
+              <td><strong class="val-gold">15%</strong></td>
+              <td><span class="badge-pct reach">100% ✓</span></td>
+              <td><span class="badge-growth flat">= Duy trì</span></td>
+            </tr>
+            <tr>
+              <td><strong>LNST/cổ phiếu (EPS)</strong></td>
+              <td>~1.460đ</td>
+              <td>—</td>
+              <td><strong class="val-gold">~2.160đ</strong></td>
+              <td>—</td>
+              <td><span class="badge-growth up">+48% ↑</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">* Số liệu tổng hợp từ các nguồn công bố. Doanh thu 2025 là ước tính; LNST 2025 = 1.050 tỷ đồng theo công bố chính thức. Kế hoạch 2025: Doanh thu +32%, LNST +18% so với 2024.</p>
+      </div>
+
+      <!-- KPI Cards 2025 -->
+      <div class="kpi-grid" data-aos="fade-up" data-aos-delay="200" style="margin-top:48px;">
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="80">
+          <div class="kpi-icon gold-icon"><i class="fas fa-coins"></i></div>
+          <div class="kpi-num count-num" data-count="1050" data-suffix="">1,050</div>
+          <div class="kpi-unit">tỷ đồng</div>
+          <div class="kpi-label">Lợi nhuận sau thuế 2025</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> +48% so với 2024</div>
+        </div>
+        <div class="kpi-card highlight" data-aos="zoom-in" data-aos-delay="130">
+          <div class="kpi-icon gold-icon"><i class="fas fa-chart-bar"></i></div>
+          <div class="kpi-num">125%</div>
+          <div class="kpi-unit">hoàn thành KH LNST</div>
+          <div class="kpi-label">Vượt kế hoạch ĐHĐCĐ 2025</div>
+          <div class="kpi-change up"><i class="fas fa-trophy"></i> Kỷ lục lợi nhuận mới</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="180">
+          <div class="kpi-icon"><i class="fas fa-bolt"></i></div>
+          <div class="kpi-num">12</div>
+          <div class="kpi-unit">nhà máy điện</div>
+          <div class="kpi-label">Đang vận hành (tính Q4/2025)</div>
+          <div class="kpi-change up"><i class="fas fa-plus-circle"></i> +2 nhà máy so với 2024</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="230">
+          <div class="kpi-icon"><i class="fas fa-hard-hat"></i></div>
+          <div class="kpi-num">5.012</div>
+          <div class="kpi-unit">tỷ đồng</div>
+          <div class="kpi-label">Doanh thu xây lắp Q4/2025</div>
+          <div class="kpi-change up"><i class="fas fa-arrow-up"></i> Tăng ~gấp đôi YoY</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="280">
+          <div class="kpi-icon"><i class="fas fa-percentage"></i></div>
+          <div class="kpi-num">15%</div>
+          <div class="kpi-unit">cổ tức</div>
+          <div class="kpi-label">Cổ tức năm 2025</div>
+          <div class="kpi-change neutral"><i class="fas fa-equals"></i> Duy trì ổn định</div>
+        </div>
+        <div class="kpi-card" data-aos="zoom-in" data-aos-delay="330">
+          <div class="kpi-icon"><i class="fas fa-globe-asia"></i></div>
+          <div class="kpi-num">32%</div>
+          <div class="kpi-unit">tăng trưởng</div>
+          <div class="kpi-label">Mục tiêu doanh thu 2025</div>
+          <div class="kpi-change up"><i class="fas fa-flag-checkered"></i> KH đặt từ ĐHĐCĐ 2025</div>
+        </div>
+      </div>
+
+      <!-- Chart row -->
+      <div class="chart-section" data-aos="fade-up" data-aos-delay="200" style="margin-top:40px;">
+        <div class="chart-row">
+          <div class="chart-box" data-aos="fade-right" data-aos-delay="100">
+            <h3><i class="fas fa-chart-bar"></i> So sánh Kế hoạch vs. Thực hiện 2025</h3>
+            <div style="height:300px;position:relative;">
+              <canvas id="planVsActualChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-box" data-aos="fade-left" data-aos-delay="100">
+            <h3><i class="fas fa-chart-pie"></i> Đóng góp LNST theo mảng 2025</h3>
+            <div style="height:300px;position:relative;">
+              <canvas id="segmentProfitChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUARTERLY ===== -->
+  <section id="quarterly" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Kết quả theo quý</div>
+      <h2 class="section-title" data-aos="fade-up">Diễn biến <span class="gradient-text">từng quý 2025</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Kết quả theo từng quý phản ánh đặc thù mùa vụ của ngành xây lắp — bứt phá mạnh ở nửa cuối năm, đặc biệt Q4.
+      </p>
+
+      <!-- Quarterly cards -->
+      <div class="quarterly-grid">
+        <div class="q-card q1" data-aos="fade-up" data-aos-delay="80">
+          <div class="q-label">Q1/2025</div>
+          <div class="q-status neutral">Ổn định</div>
+          <div class="q-metrics">
+            <div class="q-metric">
+              <span class="q-val">~2.200 tỷ</span>
+              <span class="q-key">Doanh thu</span>
+            </div>
+            <div class="q-metric">
+              <span class="q-val highlight-val">~140 tỷ</span>
+              <span class="q-key">LNST</span>
+            </div>
+          </div>
+          <p class="q-note">Giai đoạn đầu năm, khối lượng xây lắp chưa cao. Năng lượng và khai khoáng duy trì đều đặn.</p>
+          <div class="q-bar-wrap">
+            <div class="q-bar" style="width:0%" data-w="28"></div>
+          </div>
+        </div>
+
+        <div class="q-card q2" data-aos="fade-up" data-aos-delay="150">
+          <div class="q-label">Q2/2025</div>
+          <div class="q-status down">Thận trọng</div>
+          <div class="q-metrics">
+            <div class="q-metric">
+              <span class="q-val">~2.500 tỷ</span>
+              <span class="q-key">Doanh thu</span>
+            </div>
+            <div class="q-metric">
+              <span class="q-val">~150 tỷ</span>
+              <span class="q-key">LNST</span>
+            </div>
+          </div>
+          <p class="q-note">LN nửa đầu năm giảm ~20% so H1/2024. Áp lực chi phí đầu tư nhà máy mới và thủy văn thấp hơn kỳ vọng.</p>
+          <div class="q-bar-wrap">
+            <div class="q-bar" style="width:0%" data-w="33"></div>
+          </div>
+        </div>
+
+        <div class="q-card q3" data-aos="fade-up" data-aos-delay="220">
+          <div class="q-label">Q3/2025</div>
+          <div class="q-status up">Phục hồi</div>
+          <div class="q-metrics">
+            <div class="q-metric">
+              <span class="q-val">~3.000 tỷ</span>
+              <span class="q-key">Doanh thu</span>
+            </div>
+            <div class="q-metric">
+              <span class="q-val highlight-val">~250 tỷ</span>
+              <span class="q-key">LNST</span>
+            </div>
+          </div>
+          <p class="q-note">Bắt đầu tăng tốc. Khai khoáng cải thiện rõ, xây lắp điện tăng tốc bàn giao cuối năm.</p>
+          <div class="q-bar-wrap">
+            <div class="q-bar" style="width:0%" data-w="55"></div>
+          </div>
+        </div>
+
+        <div class="q-card q4 q4-star" data-aos="fade-up" data-aos-delay="290">
+          <div class="q-badge-star"><i class="fas fa-star"></i> Kỷ lục</div>
+          <div class="q-label">Q4/2025</div>
+          <div class="q-status up-strong">Bứt phá</div>
+          <div class="q-metrics">
+            <div class="q-metric">
+              <span class="q-val gold-val">5.012 tỷ</span>
+              <span class="q-key">Doanh thu</span>
+            </div>
+            <div class="q-metric">
+              <span class="q-val gold-val">~510 tỷ</span>
+              <span class="q-key">LNST</span>
+            </div>
+          </div>
+          <p class="q-note">Quý vàng của PC1 — doanh thu thuần <strong>5.012 tỷ đồng</strong>, tăng gần gấp đôi YoY. Bàn giao nhiều công trình điện trọng điểm, khai khoáng đạt công suất tối đa.</p>
+          <div class="q-bar-wrap gold-bar-wrap">
+            <div class="q-bar gold-bar" style="width:0%" data-w="100"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quarterly chart -->
+      <div class="chart-box-light" data-aos="fade-up" data-aos-delay="200" style="margin-top:48px;">
+        <h3><i class="fas fa-chart-area"></i> Diễn biến doanh thu theo quý 2024 vs. 2025</h3>
+        <div style="height:300px;position:relative;">
+          <canvas id="quarterlyChart"></canvas>
+        </div>
+        <p class="chart-note-light">* Số liệu Q1–Q3/2025 là ước tính tham khảo. Q4/2025: doanh thu thuần 5.012 tỷ đồng (nguồn: BCTC Q4/2025).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HIGHLIGHTS 2025 ===== -->
+  <section id="highlights2025" class="section section-gradient">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">Dấu ấn 2025</div>
+      <h2 class="section-title light" data-aos="fade-up">
+        Những cột mốc <span class="gradient-text-gold">quan trọng</span>
+      </h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        Năm 2025 ghi dấu với nhiều thành tựu nổi bật — từ kỷ lục tài chính, dự án hạ tầng đến mở rộng chiến lược.
+      </p>
+
+      <div class="highlights-grid">
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="80">
+          <div class="hl-icon gold-hl"><i class="fas fa-trophy"></i></div>
+          <div class="hl-badge gold-badge">Kỷ lục lịch sử</div>
+          <h3>LNST lần đầu vượt 1.000 tỷ</h3>
+          <p>PC1 ghi nhận lợi nhuận sau thuế <strong>1.050 tỷ đồng</strong> — lần đầu tiên trong lịch sử công ty vượt ngưỡng nghìn tỷ, tăng đột biến <strong>+48%</strong> so với 2024.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="150">
+          <div class="hl-icon"><i class="fas fa-plug"></i></div>
+          <div class="hl-badge">Xây lắp điện</div>
+          <h3>Bùng nổ doanh thu Q4</h3>
+          <p>Doanh thu Q4/2025 đạt <strong>5.012 tỷ đồng</strong>, tăng gần gấp đôi so cùng kỳ 2024. Bàn giao loạt công trình điện trọng điểm quốc gia đúng tiến độ.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="220">
+          <div class="hl-icon"><i class="fas fa-water"></i></div>
+          <div class="hl-badge">Năng lượng</div>
+          <h3>12 nhà máy điện vận hành</h3>
+          <p>Đưa vào vận hành thêm <strong>2 nhà máy thủy điện mới</strong> (Bảo Lạc A và Thượng Hà), nâng tổng danh mục lên 12 nhà máy với công suất mở rộng.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="290">
+          <div class="hl-icon"><i class="fas fa-mountain"></i></div>
+          <div class="hl-badge">Khai khoáng</div>
+          <h3>Khai khoáng đóng góp vào LNST</h3>
+          <p>Dự án Nickel–Đồng tại Cao Bằng đạt công suất ổn định, trở thành <strong>một trong ba trụ cột</strong> đóng góp lợi nhuận trong năm 2025.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="360">
+          <div class="hl-icon"><i class="fas fa-city"></i></div>
+          <div class="hl-badge">Khu công nghiệp</div>
+          <h3>KCN Nomura 2 triển khai</h3>
+          <p>Khởi động triển khai <strong>KCN Nomura 2 Hải Phòng</strong> (~200ha), thu hút nhà đầu tư FDI từ Nhật Bản, Hàn Quốc trong bối cảnh làn sóng dịch chuyển chuỗi cung ứng.</p>
+        </div>
+
+        <div class="highlight-card" data-aos="flip-up" data-aos-delay="430">
+          <div class="hl-icon"><i class="fas fa-rocket"></i></div>
+          <div class="hl-badge gold-badge">Tầm nhìn dài hạn</div>
+          <h3>Lộ trình vốn hóa 1 tỷ USD</h3>
+          <p>Tại ĐHĐCĐ 2025, PC1 công bố mục tiêu đạt <strong>mức vốn hóa 1 tỷ USD</strong> vào năm 2028, với các bước nâng cấp quản trị và minh bạch thông tin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEGMENT PERFORMANCE ===== -->
+  <section id="segments2025" class="section">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Hiệu quả từng mảng</div>
+      <h2 class="section-title" data-aos="fade-up">Ba trụ cột <span class="gradient-text">tăng trưởng 2025</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Đánh giá hiệu quả và đóng góp của từng mảng kinh doanh vào kết quả chung của tập đoàn năm 2025.
+      </p>
+
+      <div class="segment-detail-grid">
+
+        <!-- Xây lắp điện -->
+        <div class="seg-detail-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="seg-header">
+            <div class="seg-icon-wrap">
+              <i class="fas fa-hard-hat"></i>
+            </div>
+            <div>
+              <h3>Xây lắp điện &amp; Hạ tầng</h3>
+              <span class="seg-contrib">Đóng góp chủ đạo doanh thu</span>
+            </div>
+            <div class="seg-perf-badge up">↑ Mạnh</div>
+          </div>
+          <div class="seg-kpis">
+            <div class="seg-kpi">
+              <strong>~8.500 tỷ</strong><span>Doanh thu ước tính 2025</span>
+            </div>
+            <div class="seg-kpi">
+              <strong>~60%</strong><span>Tỷ trọng doanh thu tập đoàn</span>
+            </div>
+            <div class="seg-kpi">
+              <strong>5.012 tỷ</strong><span>Doanh thu Q4 (chính thức)</span>
+            </div>
+          </div>
+          <div class="seg-progress-bar-wrap">
+            <div class="seg-progress" data-w="85" style="width:0%;background:linear-gradient(90deg,#0a4fa8,#1a63c6)"></div>
+          </div>
+          <p class="seg-desc">Bùng nổ ở nửa cuối năm. Q4/2025 ghi nhận doanh thu thuần 5.012 tỷ đồng, tăng gần gấp đôi so Q4/2024. Tiếp tục là EPC hàng đầu Việt Nam trong hạ tầng truyền tải và năng lượng tái tạo.</p>
+          <div class="seg-tag-list">
+            <span class="stag">500kV</span>
+            <span class="stag">EPC điện gió</span>
+            <span class="stag">Xuất khẩu quốc tế</span>
+          </div>
+        </div>
+
+        <!-- Năng lượng -->
+        <div class="seg-detail-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="seg-header">
+            <div class="seg-icon-wrap green-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <div>
+              <h3>Đầu tư Năng lượng</h3>
+              <span class="seg-contrib">Đóng góp dòng tiền ổn định</span>
+            </div>
+            <div class="seg-perf-badge neutral">= Ổn định</div>
+          </div>
+          <div class="seg-kpis">
+            <div class="seg-kpi">
+              <strong>12 nhà máy</strong><span>Đang vận hành Q4/2025</span>
+            </div>
+            <div class="seg-kpi">
+              <strong>350+ MW</strong><span>Tổng công suất lắp đặt</span>
+            </div>
+            <div class="seg-kpi">
+              <strong>~22%</strong><span>Tỷ trọng doanh thu</span>
+            </div>
+          </div>
+          <div class="seg-progress-bar-wrap">
+            <div class="seg-progress" data-w="65" style="width:0%;background:linear-gradient(90deg,#16a34a,#22c55e)"></div>
+          </div>
+          <p class="seg-desc">H1/2025 gặp thủy văn không thuận lợi, ảnh hưởng sản lượng phát điện. H2/2025 phục hồi nhờ mùa mưa tốt và 2 nhà máy mới đi vào vận hành chính thức.</p>
+          <div class="seg-tag-list">
+            <span class="stag green-stag">Thủy điện</span>
+            <span class="stag green-stag">Điện gió</span>
+            <span class="stag green-stag">Bảo Lạc A · Thượng Hà</span>
+          </div>
+        </div>
+
+        <!-- Khai khoáng -->
+        <div class="seg-detail-card star-card" data-aos="fade-up" data-aos-delay="220">
+          <div class="seg-badge-new"><i class="fas fa-star"></i> Trụ cột mới</div>
+          <div class="seg-header">
+            <div class="seg-icon-wrap purple-icon">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <div>
+              <h3>Khai thác Khoáng sản</h3>
+              <span class="seg-contrib">Bứt phá đóng góp LNST</span>
+            </div>
+            <div class="seg-perf-badge up">↑ Mạnh</div>
+          </div>
+          <div class="seg-kpis">
+            <div class="seg-kpi">
+              <strong>600K tấn/năm</strong><span>Công suất thiết kế</span>
+            </div>
+            <div class="seg-kpi">
+              <strong>Nickel–Đồng</strong><span>Cao Bằng (lộ thiên)</span>
+            </div>
+            <div class="seg-kpi">
+              <strong>Ổn định</strong><span>Công suất vận hành 2025</span>
+            </div>
+          </div>
+          <div class="seg-progress-bar-wrap">
+            <div class="seg-progress" data-w="75" style="width:0%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div>
+          </div>
+          <p class="seg-desc">Theo phân tích ACBS, khai khoáng Nickel–Đồng là một trong "bộ ba" trụ cột tăng tốc lợi nhuận PC1 năm 2025. Đây là mảng có biên lợi nhuận cao và tiềm năng mở rộng.</p>
+          <div class="seg-tag-list">
+            <span class="stag purple-stag">Nickel</span>
+            <span class="stag purple-stag">Đồng</span>
+            <span class="stag purple-stag">Cao Bằng</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Other segments -->
+      <div class="other-segments" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="other-seg-title"><i class="fas fa-th-large"></i> Các mảng khác</h3>
+        <div class="other-seg-grid">
+          <div class="other-seg-item">
+            <div class="osi-icon"><i class="fas fa-city"></i></div>
+            <div>
+              <strong>Khu công nghiệp</strong>
+              <p>Nomura 2 đã khởi động, Yên Phong II-A duy trì tỷ lệ lấp đầy cao. Thu hút FDI ổn định.</p>
+            </div>
+          </div>
+          <div class="other-seg-item">
+            <div class="osi-icon"><i class="fas fa-cogs"></i></div>
+            <div>
+              <strong>Sản xuất công nghiệp</strong>
+              <p>Xuất khẩu cột thép sang Philippines, Lào, Australia tiếp tục mở rộng, thêm thị trường mới ở Đông Nam Á.</p>
+            </div>
+          </div>
+          <div class="other-seg-item">
+            <div class="osi-icon"><i class="fas fa-home"></i></div>
+            <div>
+              <strong>Bất động sản dân dụng</strong>
+              <p>Duy trì phát triển các dự án nhà ở, tận dụng đà phục hồi thị trường BĐS nửa cuối 2025.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLAN 2026 ===== -->
+  <section id="plan2026" class="section section-dark">
+    <div class="container">
+      <div class="section-tag light" data-aos="fade-right">Kế hoạch 2026</div>
+      <h2 class="section-title light" data-aos="fade-up">
+        Định hướng <span class="gradient-text-gold">2026 &amp; Trung hạn</span>
+      </h2>
+      <p class="section-subtitle light" data-aos="fade-up" data-aos-delay="100">
+        Trên nền tảng kỷ lục 2025, PC1 đặt mục tiêu tiếp tục tăng trưởng bền vững hướng tới vốn hóa 1 tỷ USD năm 2028.
+      </p>
+
+      <div class="plan2026-grid">
+        <!-- Targets 2026 -->
+        <div class="plan2026-targets" data-aos="fade-right" data-aos-delay="100">
+          <div class="plan-card-dark">
+            <h3><i class="fas fa-bullseye"></i> Chỉ tiêu kế hoạch 2026 (dự kiến)</h3>
+            <div class="target-2026-list">
+              <div class="t26-item">
+                <div class="t26-label">Tổng doanh thu</div>
+                <div class="t26-val">~17.000 – 18.000 tỷ đồng</div>
+                <div class="t26-growth up">+20–27% so với 2025</div>
+              </div>
+              <div class="t26-item">
+                <div class="t26-label">Lợi nhuận sau thuế</div>
+                <div class="t26-val gold-text">~1.200 – 1.400 tỷ đồng</div>
+                <div class="t26-growth up">+14–33% so với 2025</div>
+              </div>
+              <div class="t26-item">
+                <div class="t26-label">Cổ tức</div>
+                <div class="t26-val">15%</div>
+                <div class="t26-growth neutral">Duy trì ổn định</div>
+              </div>
+              <div class="t26-item">
+                <div class="t26-label">Công suất điện</div>
+                <div class="t26-val">450+ MW</div>
+                <div class="t26-growth up">Thêm dự án mới</div>
+              </div>
+            </div>
+            <div class="context-box" style="margin-top:20px;">
+              <div class="context-icon"><i class="fas fa-info-circle"></i></div>
+              <div>Chỉ tiêu 2026 là ước tính dự phóng dựa theo xu hướng tăng trưởng và chiến lược công bố. Số liệu chính thức sẽ được phê duyệt tại ĐHĐCĐ 2026.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="plan2026-roadmap" data-aos="fade-left" data-aos-delay="100">
+          <div class="plan-card-dark">
+            <h3><i class="fas fa-road"></i> Lộ trình chiến lược 2026–2028</h3>
+            <div class="roadmap-list">
+              <div class="rm-item" data-aos="fade-left" data-aos-delay="120">
+                <div class="rm-year">2026</div>
+                <div class="rm-content">
+                  <h4>Tăng tốc mở rộng năng lượng</h4>
+                  <p>Hoàn thiện danh mục 450+ MW, xúc tiến thêm dự án điện gió ngoài khơi và điện mặt trời.</p>
+                </div>
+              </div>
+              <div class="rm-item" data-aos="fade-left" data-aos-delay="190">
+                <div class="rm-year">2026</div>
+                <div class="rm-content">
+                  <h4>KCN Nomura 2 vận hành thương mại</h4>
+                  <p>Hoàn thành hạ tầng cơ bản KCN Nomura 2, bắt đầu thu phí thuê đất và thu hút nhà đầu tư.</p>
+                </div>
+              </div>
+              <div class="rm-item" data-aos="fade-left" data-aos-delay="260">
+                <div class="rm-year">2027</div>
+                <div class="rm-content">
+                  <h4>Mở rộng khai khoáng &amp; xuất khẩu</h4>
+                  <p>Tăng công suất khai thác, mở rộng xuất khẩu Nickel–Đồng sang thị trường quốc tế.</p>
+                </div>
+              </div>
+              <div class="rm-item gold-rm" data-aos="fade-left" data-aos-delay="330">
+                <div class="rm-year gold-year">2028</div>
+                <div class="rm-content">
+                  <h4>Vốn hóa 1 tỷ USD</h4>
+                  <p>Mục tiêu chiến lược dài hạn: đưa PC1 Group lên mức vốn hóa 1 tỷ USD, nâng cấp tiêu chuẩn quản trị quốc tế.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Growth chart 2022-2028F -->
+      <div class="chart-box" data-aos="fade-up" data-aos-delay="200" style="margin-top:40px;">
+        <h3><i class="fas fa-chart-area"></i> Lộ trình tăng trưởng LNST PC1 (2020–2028F)</h3>
+        <div style="height:300px;position:relative;">
+          <canvas id="roadmapChart"></canvas>
+        </div>
+        <p class="chart-note">* 2026F–2028F: dự phóng theo chiến lược công bố. Không phải cam kết chính thức.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENTS 2025 ===== -->
+  <section id="docs2025" class="section section-light">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-right">Tài liệu 2025</div>
+      <h2 class="section-title" data-aos="fade-up">
+        Tài liệu &amp; Báo cáo <span class="gradient-text">năm 2025</span>
+      </h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Tổng hợp các tài liệu liên quan đến hoạt động và báo cáo của PC1 Group trong năm 2025.
+      </p>
+
+      <div class="docs-grid">
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="doc-type-badge annual">Báo cáo tài chính</div>
+          <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="doc-info">
+            <h4>BCTC Bán niên 2025 (Tiếng Anh)</h4>
+            <p>Báo cáo tài chính riêng lẻ giữa niên độ Q2/2025 đã soát xét. Cung cấp cái nhìn về kết quả nửa đầu năm 2025.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 05/09/2025 · <i class="fas fa-file-alt"></i> PDF · EN · Vietstock</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Xem</a>
+            <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" download class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Tải</a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="140">
+          <div class="doc-type-badge finance">Phân tích thị trường</div>
+          <div class="doc-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo cập nhật KQKD Q4/2025 (BETA)</h4>
+            <p>Phân tích kết quả kinh doanh quý 4/2025 và cả năm 2025 của PC1, đánh giá triển vọng 2026 từ BETA Securities.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> Q1/2026 · <i class="fas fa-file-alt"></i> PDF · BETA</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://finance.vietstock.vn/bao-cao-phan-tich/18808/pc1-bao-cao-cap-nhat-kqkd-q42025.htm" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Xem</a>
+            <a href="https://finance.vietstock.vn/bao-cao-phan-tich/18808/pc1-bao-cao-cap-nhat-kqkd-q42025.htm" target="_blank" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Link</a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="doc-type-badge annual">Báo cáo thường niên</div>
+          <div class="doc-icon"><i class="fas fa-book"></i></div>
+          <div class="doc-info">
+            <h4>Báo cáo thường niên 2024 (tham khảo)</h4>
+            <p>Nền tảng so sánh — Báo cáo thường niên 2024 với đầy đủ chiến lược, quản trị và kết quả tài chính năm gốc.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 22/04/2025 · <i class="fas fa-file-alt"></i> PDF · ~15MB</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Xem</a>
+            <a href="https://file.fpts.com.vn/FileStore2/File/2025/04/22/20250422_PC1_250422_Annual_Report_2024.pdf" download class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Tải</a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="260">
+          <div class="doc-type-badge news">Tin tức</div>
+          <div class="doc-icon"><i class="fas fa-newspaper"></i></div>
+          <div class="doc-info">
+            <h4>PC1 lãi ròng 1.050 tỷ đồng năm 2025</h4>
+            <p>Bài phân tích từ MarketTimes về kết quả kinh doanh năm 2025 của PC1 — tăng đột biến 124% kế hoạch LNST.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 2026 · <i class="fas fa-link"></i> MarketTimes</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://markettimes.vn/pc1-lai-rong-1-050-ty-dong-nam-2025-tang-dot-bien-124-vuot-xa-ke-hoach-105882.html" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Đọc</a>
+            <a href="https://markettimes.vn/pc1-lai-rong-1-050-ty-dong-nam-2025-tang-dot-bien-124-vuot-xa-ke-hoach-105882.html" target="_blank" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Link</a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="320">
+          <div class="doc-type-badge finance">Phân tích</div>
+          <div class="doc-icon"><i class="fas fa-search-dollar"></i></div>
+          <div class="doc-info">
+            <h4>ACBS: Khuyến nghị MUA, kỳ vọng +34%</h4>
+            <p>ACBS khuyến nghị MUA cổ phiếu PC1 dựa trên "bộ ba" xây lắp – điện – khai khoáng. Kỳ vọng tăng 34% so với giá thị trường.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> 2025 · <i class="fas fa-file-alt"></i> ACBS Research</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://nguoiquansat.vn/pc1-tang-toc-loi-nhuan-nho-bo-ba-xay-lap-dien-khai-khoang-acbs-khuyen-nghi-mua-ky-vong-tang-34-253978.html" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Đọc</a>
+            <a href="https://nguoiquansat.vn/pc1-tang-toc-loi-nhuan-nho-bo-ba-xay-lap-dien-khai-khoang-acbs-khuyen-nghi-mua-ky-vong-tang-34-253978.html" target="_blank" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Link</a>
+          </div>
+        </div>
+
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="380">
+          <div class="doc-type-badge agm">Nghị quyết ĐHĐCĐ</div>
+          <div class="doc-icon"><i class="fas fa-gavel"></i></div>
+          <div class="doc-info">
+            <h4>ĐHĐCĐ 2025 — Kế hoạch &amp; Mục tiêu</h4>
+            <p>Tại ĐHĐCĐ 2025, PC1 thông qua kế hoạch doanh thu +32%, LNST +18%, định hướng vốn hóa 1 tỷ USD vào 2028.</p>
+            <div class="doc-meta"><i class="fas fa-calendar"></i> Tháng 4/2025 · <i class="fas fa-link"></i> Nguồn công bố</div>
+          </div>
+          <div class="doc-actions">
+            <a href="https://thitruongtaichinhtiente.vn/dhdcd-pc1-muc-tieu-loi-nhuan-2025-tang-18-huong-toi-muc-von-hoa-ty-usd-vao-nam-2028-67304.html" target="_blank" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Đọc</a>
+            <a href="https://thitruongtaichinhtiente.vn/dhdcd-pc1-muc-tieu-loi-nhuan-2025-tang-18-huong-toi-muc-von-hoa-ty-usd-vao-nam-2028-67304.html" target="_blank" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">PC1</div>
+            <span>PC1 GROUP</span>
+          </div>
+          <p>Báo cáo kết quả &amp; kế hoạch năm 2025 — Tổng hợp từ các tài liệu công bố chính thức của Công ty Cổ phần Tập đoàn PC1.</p>
+          <div class="footer-badges">
+            <span class="badge"><i class="fas fa-chart-bar"></i> HOSE: PC1</span>
+            <span class="badge gold-badge-ft"><i class="fas fa-trophy"></i> LNST 1.050 tỷ 2025</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Trang</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ (2024)</a></li>
+            <li><a href="#overview">Tổng quan 2025</a></li>
+            <li><a href="#kpi2025">Chỉ số 2025</a></li>
+            <li><a href="#quarterly">Theo quý</a></li>
+            <li><a href="#plan2026">Kế hoạch 2026</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Năm báo cáo</h4>
+          <ul>
+            <li><a href="index.html">← Báo cáo 2024</a></li>
+            <li><a href="2025.html" class="active-link">Báo cáo 2025 (hiện tại)</a></li>
+            <li><a href="#docs2025">Tài liệu 2025</a></li>
+            <li><a href="index.html#documents">Thư viện tài liệu</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h4>Thông tin</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội</p>
+          <p><i class="fas fa-phone"></i> 024 7309 5555</p>
+          <p><i class="fas fa-globe"></i> www.pc1group.vn</p>
+          <div class="footer-note">
+            <i class="fas fa-info-circle"></i>
+            <span>Dữ liệu tổng hợp từ BCTC, báo cáo thường niên và các nguồn tin chính thức. Một số chỉ tiêu 2025 là ước tính.</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Công ty Cổ phần Tập đoàn PC1 · Bản demo website – không phải website chính thức</p>
+        <p>Nguồn: <a href="https://markettimes.vn/pc1-lai-rong-1-050-ty-dong-nam-2025-tang-dot-bien-124-vuot-xa-ke-hoach-105882.html" target="_blank">MarketTimes</a> · <a href="https://static2.vietstock.vn/vietstock/2025/9/5/lbpicn__5__20250630_pc1_sfs_en_organized.pdf" target="_blank">BCTC H1/2025</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/charts2025.js"></script>
+</body>
+</html>

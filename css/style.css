@@ -1286,6 +1286,33 @@ input, select, textarea { font-family: var(--font); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== YEAR SWITCHER (index) ===== */
+.year-switcher-index {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.yr-btn {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.58);
+  transition: var(--transition);
+}
+.yr-btn:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+.yr-btn.yr-active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  box-shadow: 0 2px 12px rgba(10,79,168,0.35);
+}
+
 /* Active nav link */
 .nav-links a.active {
   color: var(--accent);
