@@ -51,10 +51,7 @@
 
       <div class="nav-actions">
         <!-- Year switcher -->
-        <div class="year-switcher">
-          <a href="index.html" class="year-btn">2024</a>
-          <a href="2025.html" class="year-btn active">2025</a>
-        </div>
+        <div class="year-switcher" data-year-switcher data-current-year="2025"></div>
         <button class="hamburger" id="hamburger" aria-label="menu">
           <span></span><span></span><span></span>
         </button>
@@ -832,18 +829,13 @@
         </div>
         <div class="footer-links">
           <h4>Năm báo cáo</h4>
-          <ul>
-            <li><a href="index.html">← Báo cáo 2024</a></li>
-            <li><a href="2025.html" class="active-link">Báo cáo 2025 (hiện tại)</a></li>
-            <li><a href="#docs2025">Tài liệu 2025</a></li>
-            <li><a href="index.html#documents">Thư viện tài liệu</a></li>
-          </ul>
+          <ul data-report-year-links data-current-year="2025"></ul>
         </div>
         <div class="footer-info">
           <h4>Thông tin</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội</p>
-          <p><i class="fas fa-phone"></i> 024 7309 5555</p>
-          <p><i class="fas fa-globe"></i> www.pc1group.vn</p>
+          <p><i class="fas fa-map-marker-alt"></i> <span data-contact="address">Tòa CT2, Số 583 Đường Nguyễn Trãi, P. Thanh Liệt , TP Hà Nội, Việt Nam</span></p>
+          <p><i class="fas fa-phone"></i> <span data-contact="phone">+84 24 38456329</span></p>
+          <p><i class="fas fa-globe"></i> <span data-contact="website">www.pc1group.vn</span></p>
           <div class="footer-note">
             <i class="fas fa-info-circle"></i>
             <span>Dữ liệu tổng hợp từ BCTC, báo cáo thường niên và các nguồn tin chính thức. Một số chỉ tiêu 2025 là ước tính.</span>

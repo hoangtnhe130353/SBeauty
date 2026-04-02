@@ -11,9 +11,12 @@ Static website demo for `PC1 Group`, currently publishing:
 .
 |-- index.html
 |-- 2025.html
+|-- 2026.html
 |-- css/
 |   |-- style.css
 |   `-- 2025.css
+|-- data/
+|   `-- report-data.json
 |-- js/
 |   |-- main.js
 |   |-- charts.js
@@ -40,6 +43,16 @@ The script will:
 - sync `css/`, `js/`, `assets/`, `images/` when present
 - keep repo-only files such as `.git/`, `.nojekyll`, and this README untouched
 - optionally delete the imported export folder after syncing
+
+## Shared data
+
+Core shared data now lives in `data/report-data.json`:
+
+- shared contact info for repeated footer / IR blocks
+- year navigation config
+- annual summary data for 2024, 2025, and 2026
+
+This keeps future year updates more explicit and reduces repeated hard-coded content across pages.
 
 ## Local preview
 

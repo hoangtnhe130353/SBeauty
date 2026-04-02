@@ -1,0 +1,117 @@
+{
+  "contact": {
+    "address": "Tòa CT2, Số 583 Đường Nguyễn Trãi, P. Thanh Liệt , TP Hà Nội, Việt Nam",
+    "phone": "+84 24 38456329",
+    "website": "www.pc1group.vn",
+    "stockCode": "PC1 - Sàn HOSE"
+  },
+  "yearNavigation": [
+    {
+      "year": "2026",
+      "label": "2026",
+      "href": "2026.html",
+      "placeholder": true
+    },
+    {
+      "year": "2025",
+      "label": "2025",
+      "href": "2025.html",
+      "placeholder": false
+    },
+    {
+      "year": "2024",
+      "label": "2024",
+      "href": "index.html",
+      "placeholder": false
+    },
+    {
+      "year": "2023",
+      "label": "2023",
+      "href": "2023.html",
+      "placeholder": true
+    },
+    {
+      "year": "2022",
+      "label": "2022",
+      "href": "2022.html",
+      "placeholder": true
+    },
+    {
+      "year": "2021",
+      "label": "2021",
+      "href": "2021.html",
+      "placeholder": true
+    }
+  ],
+  "reports": {
+    "2024": {
+      "year": "2024",
+      "page": "index.html",
+      "status": "published",
+      "statusLabel": "Đã xuất bản",
+      "title": "Báo cáo thường niên 2024",
+      "subtitle": "Bộ số liệu gốc đang dùng cho landing page hiện tại của project.",
+      "summaryCards": [
+        {
+          "label": "Doanh thu",
+          "value": "10.089 tỷ đồng"
+        },
+        {
+          "label": "LNST",
+          "value": "710 tỷ đồng"
+        },
+        {
+          "label": "Cổ tức",
+          "value": "15%"
+        }
+      ],
+      "note": "Nguồn số liệu: Báo cáo thường niên 2024 và các tài liệu công bố chính thức của PC1."
+    },
+    "2025": {
+      "year": "2025",
+      "page": "2025.html",
+      "status": "published",
+      "statusLabel": "Đã xuất bản",
+      "title": "Báo cáo kết quả và kế hoạch 2025",
+      "subtitle": "Bản mở rộng theo năm, bổ sung kết quả 2025 và lộ trình 2026-2028.",
+      "summaryCards": [
+        {
+          "label": "Doanh thu",
+          "value": "~14.200 tỷ đồng"
+        },
+        {
+          "label": "LNST",
+          "value": "1.050 tỷ đồng"
+        },
+        {
+          "label": "Hoàn thành KH LNST",
+          "value": "125%"
+        }
+      ],
+      "note": "Một số số liệu 2025 trên site đang ở dạng ước tính tham khảo theo nguồn công bố."
+    },
+    "2026": {
+      "year": "2026",
+      "page": "2026.html",
+      "status": "planning",
+      "statusLabel": "Đang chuẩn bị nội dung",
+      "title": "Kế hoạch và triển vọng 2026",
+      "subtitle": "Trang 2026 đã được tạo khung sẵn để cập nhật nội dung ngay khi có export hoặc số liệu chính thức.",
+      "summaryCards": [
+        {
+          "label": "Doanh thu dự kiến",
+          "value": "~17.000 - 18.000 tỷ đồng"
+        },
+        {
+          "label": "LNST dự kiến",
+          "value": "~1.200 - 1.400 tỷ đồng"
+        },
+        {
+          "label": "Cổ tức mục tiêu",
+          "value": "15%"
+        }
+      ],
+      "note": "Các số liệu 2026 hiện là định hướng/kế hoạch dự kiến, chưa phải nội dung báo cáo hoàn chỉnh."
+    }
+  }
+}

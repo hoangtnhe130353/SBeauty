@@ -20,12 +20,17 @@
   display: flex;
   gap: 4px;
   padding: 4px;
+  max-width: min(100%, 420px);
+  overflow-x: auto;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  scrollbar-width: none;
 }
+.year-switcher::-webkit-scrollbar { display: none; }
 
 .year-btn {
+  flex: 0 0 auto;
   padding: 5px 14px;
   border-radius: 999px;
   font-size: 0.82rem;
@@ -43,6 +48,10 @@
   color: #fff;
   background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
   box-shadow: 0 2px 12px var(--gold-glow);
+}
+
+.year-btn.is-placeholder {
+  border: 1px dashed rgba(255,255,255,0.16);
 }
 
 .hero-2025 {
@@ -614,10 +623,6 @@
   .hero-year-badge {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .year-switcher {
-    display: none;
   }
 
   .compare-table th,

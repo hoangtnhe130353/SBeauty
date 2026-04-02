@@ -14,7 +14,98 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgressBars();
   initNavHighlight();
   initMobileMenu();
+  initSiteData();
 });
+
+let reportDataPromise;
+
+async function initSiteData() {
+  const data = await loadReportData();
+  if (!data) return;
+
+  renderYearSwitchers(data.yearNavigation || []);
+  renderReportYearLinks(data.yearNavigation || []);
+  renderContactDetails(data.contact || {});
+  renderYearSummaries(data.reports || {});
+}
+
+async function loadReportData() {
+  if (!reportDataPromise) {
+    reportDataPromise = fetch('data/report-data.json', { cache: 'no-store' })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load report data: ${response.status}`);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        console.warn(error);
+        return null;
+      });
+  }
+
+  return reportDataPromise;
+}
+
+function renderYearSwitchers(years) {
+  document.querySelectorAll('[data-year-switcher]').forEach((container) => {
+    const currentYear = container.dataset.currentYear;
+    const isIndexStyle = container.classList.contains('year-switcher-index');
+    const buttonClass = isIndexStyle ? 'yr-btn' : 'year-btn';
+    const activeClass = isIndexStyle ? 'yr-active' : 'active';
+
+    container.innerHTML = years.map((item) => {
+      const classes = [buttonClass];
+      if (item.year === currentYear) classes.push(activeClass);
+      if (item.placeholder) classes.push('is-placeholder');
+
+      return `<a href="${item.href}" class="${classes.join(' ')}"${item.year === currentYear ? ' aria-current="page"' : ''}>${item.label}</a>`;
+    }).join('');
+  });
+}
+
+function renderReportYearLinks(years) {
+  document.querySelectorAll('[data-report-year-links]').forEach((container) => {
+    const currentYear = container.dataset.currentYear;
+    container.innerHTML = years.map((item) => {
+      const linkClass = item.year === currentYear ? ' class="active-link"' : '';
+      const suffix = item.placeholder ? ' (khung sẵn)' : '';
+      return `<li><a href="${item.href}"${linkClass}>Báo cáo ${item.year}${suffix}</a></li>`;
+    }).join('');
+  });
+}
+
+function renderContactDetails(contact) {
+  document.querySelectorAll('[data-contact]').forEach((node) => {
+    const key = node.dataset.contact;
+    if (!contact[key]) return;
+    node.textContent = contact[key];
+  });
+}
+
+function renderYearSummaries(reports) {
+  document.querySelectorAll('[data-year-summary]').forEach((container) => {
+    const year = container.dataset.yearSummary;
+    const report = reports[year];
+    if (!report) return;
+
+    const statusClass = report.status === 'planning' ? 'planning' : 'pending';
+    const cards = (report.summaryCards || []).map((item) => {
+      return `<div class="year-summary-card"><strong>${item.value}</strong><span>${item.label}</span></div>`;
+    }).join('');
+
+    container.innerHTML = `
+      <div class="year-placeholder-top">
+        <div class="section-tag light">Năm ${report.year}</div>
+        <span class="year-status ${statusClass}">${report.statusLabel || report.status}</span>
+      </div>
+      <h2>${report.title}</h2>
+      <p>${report.subtitle || ''}</p>
+      <div class="year-summary-grid">${cards}</div>
+      <div class="year-placeholder-note">${report.note || ''}</div>
+    `;
+  });
+}
 
 /* ===================================================
    1. AOS — Animate on Scroll
