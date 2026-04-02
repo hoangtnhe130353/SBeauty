@@ -1,4 +1,4 @@
-# PC1 Group Corporate Report Website
+﻿# PC1 Group Corporate Report Website
 
 Static website demo for `PC1 Group`, currently publishing:
 
@@ -9,15 +9,16 @@ Static website demo for `PC1 Group`, currently publishing:
 
 ```text
 .
-|-- css/
-|   |-- style.css
-|   `-- 2025.css
-|-- data/
-|   `-- report-data.json
-|-- js/
-|   |-- main.js
-|   |-- charts.js
-|   `-- charts2025.js
+|-- assets/
+|   |-- css/
+|   |   |-- style.css
+|   |   `-- 2025.css
+|   |-- data/
+|   |   `-- report-data.json
+|   `-- js/
+|       |-- main.js
+|       |-- charts.js
+|       `-- charts2025.js
 |-- pages/
 |   |-- index.html
 |   |-- 2021.html
@@ -45,13 +46,13 @@ powershell -ExecutionPolicy Bypass -File .\scripts\import-genspark-export.ps1 -S
 The script will:
 
 - sync all exported `.html` files into `pages/`
-- sync `css/`, `js/`, `assets/`, `images/` when present
+- sync exported asset folders into `assets/` when present
 - keep repo-only files such as `.git/`, `.nojekyll`, and this README untouched
 - optionally delete the imported export folder after syncing
 
 ## Shared data
 
-Core shared data now lives in `data/report-data.json`:
+Core shared data now lives in `assets/data/report-data.json`:
 
 - shared contact info for repeated footer / IR blocks
 - year navigation config

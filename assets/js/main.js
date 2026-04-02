@@ -1,5 +1,5 @@
-/* =====================================================
-   PC1 GROUP — main.js
+﻿/* =====================================================
+   PC1 GROUP â€” main.js
    Handles: AOS init, navbar, particles, counters,
             filter, form, back-to-top, progress bars
    ===================================================== */
@@ -31,7 +31,7 @@ async function initSiteData() {
 
 async function loadReportData() {
   if (!reportDataPromise) {
-    reportDataPromise = fetch(resolveSitePath('data/report-data.json'), { cache: 'no-store' })
+    reportDataPromise = fetch(resolveSitePath('assets/data/report-data.json'), { cache: 'no-store' })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to load report data: ${response.status}`);
@@ -66,14 +66,14 @@ function renderYearSwitchers(years) {
 
       return `<a href="${item.href}" class="${classes.join(' ')}"${item.year === currentYear ? ' aria-current="page"' : ''}>
         <span>${item.label}</span>
-        ${item.placeholder ? '<small>Sắp có</small>' : ''}
+        ${item.placeholder ? '<small>Sáº¯p cÃ³</small>' : ''}
       </a>`;
     }).join('');
 
     container.innerHTML = `
       <details class="year-selector">
         <summary class="year-selector-trigger">
-          <span class="year-selector-caption">Năm báo cáo</span>
+          <span class="year-selector-caption">NÄƒm bÃ¡o cÃ¡o</span>
           <strong>${currentItem ? currentItem.label : currentYear}</strong>
           <i class="fas fa-chevron-down" aria-hidden="true"></i>
         </summary>
@@ -90,8 +90,8 @@ function renderReportYearLinks(years) {
     const currentYear = container.dataset.currentYear;
     container.innerHTML = years.map((item) => {
       const linkClass = item.year === currentYear ? ' class="active-link"' : '';
-      const suffix = item.placeholder ? ' (khung sẵn)' : '';
-      return `<li><a href="${item.href}"${linkClass}>Báo cáo ${item.year}${suffix}</a></li>`;
+      const suffix = item.placeholder ? ' (khung sáºµn)' : '';
+      return `<li><a href="${item.href}"${linkClass}>BÃ¡o cÃ¡o ${item.year}${suffix}</a></li>`;
     }).join('');
   });
 }
@@ -117,7 +117,7 @@ function renderYearSummaries(reports) {
 
     container.innerHTML = `
       <div class="year-placeholder-top">
-        <div class="section-tag light">Năm ${report.year}</div>
+        <div class="section-tag light">NÄƒm ${report.year}</div>
         <span class="year-status ${statusClass}">${report.statusLabel || report.status}</span>
       </div>
       <h2>${report.title}</h2>
@@ -129,7 +129,7 @@ function renderYearSummaries(reports) {
 }
 
 /* ===================================================
-   1. AOS — Animate on Scroll
+   1. AOS â€” Animate on Scroll
    =================================================== */
 function initAOS() {
   if (typeof AOS !== 'undefined') {
@@ -143,7 +143,7 @@ function initAOS() {
 }
 
 /* ===================================================
-   2. Navbar — scroll detection
+   2. Navbar â€” scroll detection
    =================================================== */
 function initNavbar() {
   const header = document.getElementById('header');
@@ -388,17 +388,17 @@ function handleFormSubmit() {
   const msg = document.getElementById('f-msg')?.value.trim();
 
   if (!name || !email) {
-    showToast('⚠️ Vui lòng điền đầy đủ Họ tên và Email.', 'warn');
+    showToast('âš ï¸ Vui lÃ²ng Ä‘iá»n Ä‘áº§y Ä‘á»§ Há» tÃªn vÃ  Email.', 'warn');
     return;
   }
 
   if (!isValidEmail(email)) {
-    showToast('⚠️ Email không hợp lệ.', 'warn');
+    showToast('âš ï¸ Email khÃ´ng há»£p lá»‡.', 'warn');
     return;
   }
 
   // Simulate sending
-  showToast('✅ Yêu cầu đã được ghi nhận! Chúng tôi sẽ phản hồi sớm.', 'success');
+  showToast('âœ… YÃªu cáº§u Ä‘Ã£ Ä‘Æ°á»£c ghi nháº­n! ChÃºng tÃ´i sáº½ pháº£n há»“i sá»›m.', 'success');
 
   // Clear form
   setTimeout(() => {
@@ -445,3 +445,4 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
   });
 });
+
